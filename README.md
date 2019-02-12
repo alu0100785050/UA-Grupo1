@@ -70,8 +70,7 @@ En la página 2 no hay ni código ni peticiones CSS.
 Alguna línea de código HTML que se aplique.
 
 En la página 1 si hay:
-
-"<div class="section"><div class="izq">		<img src="/istac/resources/imagenes/logo_istac.jpg" alt="">	</div>	<div class="der">		<img src="/istac/resources/imagenes/logo_edatos.jpg" alt="">	</div></div><div class="section" id="header">	<ul>	<!-- li><a href="/istac/api/edatos.html" alt="Infraestructura de Datos y Metadatos Estadísticos de Canarias (eDatos)"><i style="font-size:24px" class="fa">&#xf015;</i></a></li -->	<li><a class="active" href="/istac/api/" alt="Listado de APIs disponibles en el ISTAC">APIs</a></li>	<li><a href="/istac/api/aviso-legal.html" alt="Aviso legal">Aviso Legal</a></li>	</ul></div>"
+![Código html](ua.jpg)
 
 En la página 2 no hay ni código ni peticiones HTML.
 
