@@ -1,8 +1,8 @@
 # UA-practica1
 
-#Práctica 1. Introducción al protocolo HTTP
+### Práctica 1. Introducción al protocolo HTTP
 
-¿Qué peticiones desencadena la consulta?
+* ¿Qué peticiones desencadena la consulta?
 
 En la página 1: El acceso al directorio /istac/api/ produce la descarga del documento html que desencadena el resto de consultas GET para indexar todos los documentos de la página que sería el iniciador de las peticiones.
 
