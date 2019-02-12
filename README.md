@@ -70,7 +70,7 @@ En la página 2 no hay ni código ni peticiones CSS.
 Alguna línea de código HTML que se aplique.
 
 En la página 1 si hay:
-![Código html](ua.jpg)
+![Código html](ua.png)
 
 En la página 2 no hay ni código ni peticiones HTML.
 
