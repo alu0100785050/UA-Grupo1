@@ -2,6 +2,9 @@
   <head>
     <meta charset="utf-8">
     <title>Club de la Lectura</title>
+	<link rel="stylesheet" href="estilo.css">
+  </head>
+  <body>
     <table width="100%">
       <tr>
         <td>
@@ -27,8 +30,6 @@
         <th><a href="sign.html">Sing in</a></th>
       </tr>
     </table>
-  </head>
-  <body>
     <br>
     <hr> 
 <form>
@@ -37,22 +38,26 @@
   </div>
 <br/>
   <div class="container" align="center">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+	<div class="login">
+	  <label for="uname"><b>Username</b></label>
+	  <input class="input-login" type="text" placeholder="Enter Username" name="uname" required>
+	</div>
 <br/>
-    <label for="psw"><b>Password&nbsp;</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-<br/><br/>
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
+	<div class="login">
+      <label for="psw"><b>Password&nbsp;</b></label>
+      <input class="input-login" type="password" placeholder="Enter Password" name="psw" required>
+	</div>
+    <label id="remember">
+      <input type="checkbox" checked="checked" name="remember"> Remember me  
     </label>
-  </div>
-<br/>
+<br>
   <div class="container" style="background-color:#f1f1f1"  align="center">
-    <button type="button" class="cancelbtn">Cancel</button>
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
+    <button id="btn" type="submit">Login</button>
+  </div>
+<br/>
+
 </form>
 
 </body>
