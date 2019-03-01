@@ -1,6 +1,6 @@
 
-body{
 
+body{
 	width: 770px;
 	font-family: Arial;
 	color: black;
@@ -39,10 +39,17 @@ p {
 
 }
 
+.borde{
+
+	border-style: solid;
+	
+}
+
 .menu1{
 
 	padding: 0.3em;
 	margin-bottom: 0.7em;
+	
 }
 
 .menunavegacion{
@@ -53,30 +60,59 @@ p {
 
 .menunavegacion:hover{
 
-	color: red; 
+	background-color: red; 
 
+}	
+
+.ladoizq{
+	
+	width: 200px;
+	height: 501px;
+	float: left;
+	
 }
 
-.ancho1{
+.centro{
+	
+	width: 330px;
+	height: 501px;
+	float: left;
+	
+}
+
+#imgcentral{
 
 	width: 330px;
-
-
+	
 }
 
-.ancho2{
-
+.ladoder{
+	
 	width: 200px;
-
-
+	height: 501px;
+	float: left;
+	
 }
 
 .cabecera{
 
 	height: 100px;
+	width: 770px;
 	background-color: #9c9c9c;
 	background-image: url("cabecera.jpg");
 
+}
 
+#busqueda{
+	
+	margin-left: 70px;
+	
+}
 
+.foot{
+
+	margin-top: 506px;
+	height: 100px;
+	width: 770px;
+	
 }
