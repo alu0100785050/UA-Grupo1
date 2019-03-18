@@ -1549,7 +1549,7 @@
 
 .amber.lighten-5 {
   background-color: #fff8e1 !important;
-}
+}header
 
 .amber-text.text-lighten-5 {
   color: #fff8e1 !important;
@@ -3471,7 +3471,7 @@ table span.badge {
 .row {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .row:after {
@@ -6635,7 +6635,7 @@ textarea.materialize-textarea + label:after, .select-wrapper + label:after {
 }
 
 .input-field input[type=search]:focus:not(.browser-default) {
-  background-color: #fff;
+  background-color: #c4a381;
   border: 0;
   -webkit-box-shadow: none;
           box-shadow: none;
