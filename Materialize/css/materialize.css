@@ -2353,6 +2353,8 @@ audio:not([controls]) {
  */
 img {
   border-style: none;
+  max-width: 100%;
+  max-height: 100%
 }
 
 /**
@@ -3447,8 +3449,8 @@ table span.badge {
 }
 
 .col .row {
-  margin-left: -0.75rem;
-  margin-right: -0.75rem;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .section {
@@ -3729,13 +3731,18 @@ table span.badge {
   }
   .row .col.m2 {
     width: 16.6666666667%;
-    margin-left: auto;
+    height: 218px;
+    margin-left: 12px;
+    margin-right: 5px;
+    margin-top: 30px;
+    margin-bottom: 50px;
     left: auto;
     right: auto;
   }
   .row .col.m3 {
     width: 25%;
-    margin-left: auto;
+    margin-left: 5px;
+    margin-top: 10px;
     left: auto;
     right: auto;
   }
@@ -4740,6 +4747,7 @@ small {
   margin: 0.5rem 0 1rem 0;
   border-radius: 2px;
   background-color: #fff;
+  height: 218px;;
 }
 
 .card {
@@ -4751,6 +4759,7 @@ small {
   transition: box-shadow .25s;
   transition: box-shadow .25s, -webkit-box-shadow .25s;
   border-radius: 2px;
+  height: 218;
 }
 
 .card .card-title {
@@ -4861,6 +4870,7 @@ small {
 
 .card .card-image {
   position: relative;
+  height: 280px;
 }
 
 .card .card-image img {
@@ -4928,7 +4938,7 @@ small {
 .card .card-reveal {
   padding: 24px;
   position: absolute;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.507);
   width: 100%;
   overflow-y: auto;
   left: 0;
@@ -5279,7 +5289,7 @@ small {
   -webkit-transition: background-color .3s;
   transition: background-color .3s;
   cursor: pointer;
-  vertical-align: middle;
+  vertical-align: text-bottom;
 }
 
 .btn-floating:hover {
