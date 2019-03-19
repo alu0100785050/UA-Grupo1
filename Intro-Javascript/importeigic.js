@@ -4,8 +4,9 @@ function igic(){
     var igic=0.065;
 	var total=0;
     
-    for each(var item in productos){
-    total+=(item * igic + item);
+    for(var item in productos){
+		total+=(productos[item] * igic + productos[item]);
 	}
+	console.log(total);
 
 }
