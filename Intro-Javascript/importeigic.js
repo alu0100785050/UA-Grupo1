@@ -10,3 +10,4 @@ function igic(){
 	console.log(total);
 
 }
+igic();
