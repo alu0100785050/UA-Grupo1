@@ -1,25 +1,21 @@
-	$("#formulario").submit(function(){
+	$("#boton").click(function(e){
 		$.ajax({
 			url:'https://jsonplaceholder.typicode.com/comments?postId=1',
-			type: GET,
+			type: "get",
+			dataType: "jsonp",
+			headers: {'Access-Control-Allow-Origin': '*'},
 			async: true,
-			data: 'parametro1=valor1&parametro2=valor2'.
+			data: 'parametro1=valor1&parametro2=valor2',
 			success: function(result){
-				if(result == 1){
-					$("#exito").load();
-				}
-				else {
-					$("#fracaso").load();
-				}	
-		}})
-		.done(function(respuesta){
-			var res = $.parseJSON(respuesta);
-			console.log(resultado);
+				alert("ok");
+				$("#exito").load(result);
+				},
+			error: function(result){
+				alert('bad')	;
+				$("#fracaso").load();
 
-		.fail(function() {
-			console.log("error");
+				}	
 		})
-		});
 	});	
 
 
