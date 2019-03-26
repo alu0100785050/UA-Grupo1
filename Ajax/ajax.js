@@ -8,7 +8,7 @@
 			data: 'parametro1=valor1&parametro2=valor2',
 			success: function(result){
 				alert("ok");
-				$("#exito").load(result);
+				$('#exito').append(`<p>${result}</p>`);
 				},
 			error: function(result){
 				alert('bad')	;
