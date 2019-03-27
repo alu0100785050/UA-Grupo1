@@ -1,4 +1,4 @@
- function cambio(){
+ function cambio(ValNum){
     var cambio={apeso:27.68,aeuro:0.88,alibra:0.75};
     var dolar=3;
     var peso=dolar*cambio['apeso'];

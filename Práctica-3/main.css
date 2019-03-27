@@ -64,6 +64,7 @@ p {
 
 }	
 
+
 .ladoizq{
 	
 	width: 200px;
@@ -99,7 +100,7 @@ p {
 	height: 100px;
 	width: 770px;
 	background-color: #9c9c9c;
-	background-image: url("./cabecera.jpg");
+	background-image: url("cabecera.jpg");
 
 }
 
