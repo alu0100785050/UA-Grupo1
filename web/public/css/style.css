@@ -1,9 +1,27 @@
-
+#formulario{
+	margin-left: 200px;
+}
 
 .campos{
-    width: 100px;
-    text-align: center;
-
-
+    width: 500px;
 }
+	
+.inp::placeholder{ 
+	color: #666666; 
+}
+
+#btn{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #aaaaaa;
+    border-radius: 6px;
+    border: 2px solid #888888;
+  }
+#btn:hover{
+    color: #888888;
+    background-color: #ffffff;
+ }
 
