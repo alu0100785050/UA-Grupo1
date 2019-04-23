@@ -16,12 +16,12 @@ var nbook = function(){
   var category = $("#category").val();
   var autor= $("#author").val();
   var isbn = $("#isbn").val(); 
-  book.set({
-    title: title,
-    category: category,
-    author: autor,
-    isbn: isbn
-  })
+  book.child($("#isbn").val()).set({
+      title: title,
+      category: category,
+      author: autor,
+      isbn: isbn
+    })
 
 }
 
