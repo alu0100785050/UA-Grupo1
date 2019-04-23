@@ -18,6 +18,7 @@
         <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
       </head>
 
       <body class="orange lighten-4">
@@ -71,22 +72,22 @@
         <div class="campos">
           <div class="titulo">
             Título
-            <input class="inp" type="text" placeholder="Enter title" required>
+            <input class="inp" type="text" id="title" placeholder="Enter title" required>
           </div>
       <br/>
           <div class="autor">
             Autor
-            <input class="inp" type="text" placeholder="Enter author">
+            <input class="inp" type="text" id="author" placeholder="Enter author">
           </div>
       <br/>
           <div class="categoria">
             Categoría
-            <input class="inp" type="text" placeholder="Enter category">
+            <input class="inp" type="text" id="category" placeholder="Enter category">
           </div>
       <br/>
           <div class="isbn">
             ISBN
-            <input class="inp" type="number" placeholder="Enter ISBN">
+            <input class="inp" id="isbn" type="number" placeholder="Enter ISBN">
           </div>
       <br/>
           <button id="btn" type="submit">Añadir</button>
@@ -97,5 +98,8 @@
 
         <!--JAVASCRIPT PARA MATERIALIZE-->
         <script type="text/javascript" src="js/materialize.js"></script>
+        
+        <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+        <script type="text/javascript" src="js/firebase.js"></script>
       </body>
     </html>
