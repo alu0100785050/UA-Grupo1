@@ -10,13 +10,24 @@
 	color: #666666; 
 }
 
+form label{
+	cursor: pointer;
+	color: black;
+	font-size: 140%;
+}
+
+#info{
+	float: right;
+	margin-right: 20px;
+}
+
 #btn{
     text-decoration: none;
     padding: 10px;
     font-weight: 600;
     font-size: 20px;
     color: #ffffff;
-    background-color: #aaaaaa;
+    background-color: #c4a381;
     border-radius: 6px;
     border: 2px solid #888888;
   }

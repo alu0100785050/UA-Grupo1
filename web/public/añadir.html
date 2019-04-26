@@ -67,30 +67,37 @@
         <li><a href="">Sing in</a></li>
       </ul>
 
+	<div id="info"><p>* obligatorio</p></div>
       <form id="formulario">
           <br/>
         <div class="campos">
           <div class="titulo">
-            Título
-            <input class="inp" type="text" id="title" placeholder="Enter title" required>
+            <label for="title">Título *</label>
+            <input class="inp" type="text" id="title" placeholder="Introduzca titulo" required>
           </div>
       <br/>
           <div class="autor">
-            Autor
-            <input class="inp" type="text" id="author" placeholder="Enter author">
+            <label for="author">Autor</label>
+            <input class="inp" type="text" id="author" placeholder="Introduzca autor">
           </div>
       <br/>
           <div class="categoria">
-            Categoría
-            <input class="inp" type="text" id="category" placeholder="Enter category">
+            <label for="category">Categoría</label>
+             <select id=category>
+				<option value="drama">Drama</option>
+				<option value="miedo">Miedo</option>
+				<option value="amor">Amor</option>
+				<option value="comedia">Comedia</option>
+			 </select> 
           </div>
       <br/>
           <div class="isbn">
-            ISBN
-            <input class="inp" id="isbn" type="number" placeholder="Enter ISBN">
+            <label for="isbn">ISBN *</label>
+            <input class="inp" id="isbn" type="number" placeholder="Introduzca ISBN" required>
           </div>
       <br/>
-          <button id="btn" type="submit">Añadir</button>
+		<span id="errores"></span>
+          <button id="btn" type="button">Añadir</button>
         </div>
       <br/>
       
@@ -101,5 +108,6 @@
         
         <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
         <script type="text/javascript" src="js/firebase.js"></script>
+		<script type="text/javascript" src="js/añadir.js"></script>
       </body>
     </html>

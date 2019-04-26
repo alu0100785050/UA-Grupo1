@@ -10,23 +10,45 @@ firebase.initializeApp(config);
 
 
 var book = firebase.database().ref("BOOKS");
-var nbook = function(){
-  
-  var title = $("#title").val();
-  var category = $("#category").val();
-  var autor= $("#author").val();
-  var isbn = $("#isbn").val(); 
-  book.child($("#isbn").val()).set({
-      title: title,
-      category: category,
-      author: autor,
-      isbn: isbn
-    })
 
+function validar(){
+	
+  	var error=0;
+	var valor = document.getElementById("isbn").value.length;
+	var titulo = document.getElementById("title").value.length;
+	document.getElementById("errores").innerHTML="";
+	
+	if(titulo===0){
+		document.getElementById("errores").innerHTML+="<p>Rellene el campo del título.</p>";
+		error=1;
+	}
+	if(valor!==13){
+		document.getElementById("errores").innerHTML+="<p>El campo ISBN debe contener 13 dígitos.</p>";
+		error=1;
+	}
+	if(error==0){
+		
+		var title = $("#title").val();
+		var category = $("#category").val();
+		var autor= $("#author").val();
+		var isbn = $("#isbn").val(); 
+		book.child($("#isbn").val()).set({
+			title: title,
+			category: category,
+			author: autor,
+			isbn: isbn
+		})
+		alert("Añadido correctamente.\n\nTítulo: "+title+"\nAutor: "+autor+"\nCategoría: "+category+"\nISBN: "+isbn+"\n");
+		setTimeout(function(){
+			vaciar();
+		},0);
+		
+	}
 }
 
+function vaciar(){
+	
+	document.getElementById("formulario").reset();
+}
 
-$(window).load(function () {
-  $("#formulario").submit(nbook);
-
-});
+document.getElementById("btn").addEventListener("click",validar);
