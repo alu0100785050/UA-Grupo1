@@ -13,7 +13,7 @@ var book = firebase.database().ref("BOOKS");
 
 function validar(){
 	
-  	var error=0;
+  var error=0;
 	var valor = document.getElementById("isbn").value.length;
 	var titulo = document.getElementById("title").value.length;
 	document.getElementById("errores").innerHTML="";
