@@ -1,5 +1,7 @@
 #formulario{
 	margin-left: 200px;
+	margin-right: 200px;
+	margin-bottom: 20px;
 }
 
 .campos{
@@ -16,9 +18,43 @@ form label{
 	font-size: 140%;
 }
 
+#category{
+	display: block;
+}
+
+.categoria select{
+  background-color: #c4a381;
+  background-image: url(pictures/flecha.png);
+  color: white;
+  padding: 9px;
+  width: 250px;
+  border-radius:5px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+
+.categoria select:hover{
+	cursor: pointer; 
+}
+
+#formulario fieldset{
+	padding-left: 50px;
+	border-radius:20px;
+	border:6px groove #c4a381;
+}
+
+#añadir{
+	font-size: 140%;
+}
+
 #info{
 	float: right;
-	margin-right: 20px;
+	margin-right: 170px;
+	margin-top: 15px;
 }
 
 #btn{
