@@ -9,15 +9,34 @@ var config = {
 firebase.initializeApp(config);
 
 var book = firebase.database();
+var a = 1;
+var b = 2;
 
-book.ref("BOOKS").once('value', function(snapshot){
+book.ref('BOOKS').once('value', function(snapshot){
     if(snapshot.exists()){
-        snapshot.forEach(function(data){
+      snapshot.forEach(function(data){
 	      var childData = data.val();
+        
+        $('#information').append(
+          
+          `<div class="col m2"> 
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="pictures/`+b+`.jpg">
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+              <br><br>
+              <p> <b>Título:</b> `+ childData.title +` </p> `+`
+              <p> <b>Categoría:</b> `+ childData.category +` </p> `+`
+              <p> <b>Autor:</b> `+ childData.author +` </p> `+`
+              <p> <b>ISBN:</b> `+ childData.isbn +` </p> `+`
+            </div>
+          </div>
+        </div>` 
 
-	      console.log(childData.title);
-
-	      $('#information').append('<p>' + childData.title + '</p>');
+        );
+        b++;
     	});
     }
 });
