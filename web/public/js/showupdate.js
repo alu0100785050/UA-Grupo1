@@ -27,10 +27,10 @@ book.ref('BOOKS').once('value', function(snapshot){
             <div class="card-reveal">
               <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
               <br><br>
-              <p> <b>Título:</b> `+ childData.title +` </p> `+`
-              <p> <b>Categoría:</b> `+ childData.category +` </p> `+`
-              <p> <b>Autor:</b> `+ childData.author +` </p> `+`
-              <p> <b>ISBN:</b> `+ childData.isbn +` </p> `+`
+              <p> <b>Título:</b><br/> `+ childData.title +` </p> `+`
+              <p> <b>Categoría:</b><br/> `+ childData.category +` </p> `+`
+              <p> <b>Autor:</b><br/> `+ childData.author +` </p> `+`
+              <p> <b>ISBN:</b><br/> `+ childData.isbn +` </p> `+`
             </div>
           </div>
         </div>` 
