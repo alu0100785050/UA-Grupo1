@@ -8,9 +8,9 @@ var config = {
   };
 firebase.initializeApp(config);
 
-firebase.auth().createUserWithEmailAndPassword($("#email").val(),$("#password").val()).catch(function(error){
+firebase.auth().createUserWithEmailAndPassword($("#correo").val(),$("#password").val()).catch(function(error){
     alert(error);
 });
-firebase.auth().singInWithEmailAndPassword($("#email").val(),$("#password").val()).catch(function(error){
+firebase.auth().singInWithEmailAndPassword($("#correo").val(),$("#password").val()).catch(function(error){
     alert(error);
 });
