@@ -48,7 +48,7 @@
             <li><a href="añadir.html">Añadir</a></li>
           </ul>
           <ul class="right">
-            <li><a href="login.html">Log in</a></li>
+            <li><a href="">Log in</a></li>
             <li class="right"><a href="signin.html">Sing in</a></li>
           </ul>
           <form class="right">
@@ -70,10 +70,29 @@
         <li><a href="">Sing in</a></li>
       </ul>
       
+      <br/>
+
       <div class="row center-align">
-        <h2>Novedades</h2>
-        </tbody>
-        <a id="information"></a>
+      <form id="login">
+       <fieldset>
+        <br/>
+          <div class="registro">
+            <div class="correo">
+              <label for="correo">Correo electrónico</label>
+              <input class="inp" type="text" id="correo" placeholder="Introduzca correo" required>
+            </div>
+        <br/>
+            <div class="contraseña">
+              <label for="contraseña">Contraseña</label>
+              <input class="inp" type="password" id="contraseña" placeholder="Introduzca contraseña">
+            </div>
+        <br/>
+          <span id="errores"></span>
+            <button id="btn" type="button">Login</button>
+          </div>
+        <br/>
+        </fieldset>
+      </form>
       </div>
 
         <!--JAVASCRIPT PARA MATERIALIZE-->
