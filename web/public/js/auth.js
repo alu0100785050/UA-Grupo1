@@ -8,9 +8,13 @@ var config = {
   };
 firebase.initializeApp(config);
 
-firebase.auth().createUserWithEmailAndPassword($("#correo").val(),$("#password").val()).catch(function(error){
-    alert(error);
+document.getElementById("register").addEventListener("click",function(){
+    firebase.auth().createUserWithEmailAndPassword($("#correo").val(),$("#password").val()).catch(function(error){
+        alert(error);
+    });
 });
-firebase.auth().singInWithEmailAndPassword($("#correo").val(),$("#password").val()).catch(function(error){
-    alert(error);
+document.getElementById("login").addEventListener("click",function(){
+    firebase.auth().singInWithEmailAndPassword($("#correo").val(),$("#password").val()).catch(function(error){
+        alert(error);
+    });
 });
