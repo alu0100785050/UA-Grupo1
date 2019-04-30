@@ -9,7 +9,9 @@ var config = {
 firebase.initializeApp(config);
 
 document.getElementById("register").addEventListener("click",function(){
-    firebase.auth().createUserWithEmailAndPassword($("#correo").val(),$("#password").val()).catch(function(error){
+    var user = firebase.database().ref("USERS");
+    alert($("#scorreo").val())
+    firebase.auth().createUserWithEmailAndPassword($("#scorreo").val(),$("#spassword").val()).catch(function(error){
         alert(error);
     });
 });
