@@ -19,7 +19,7 @@ firebase.auth().onAuthStateChanged(function(user){
   }
 });
 
-firebase.auth().onAuthStateChanged(function(user){
+//firebase.auth().onAuthStateChanged(function(user){
   if(document.getElementById("register"))
   document.getElementById("register").addEventListener("click",function(){
     var promesa = new Promise(function(resolve,reject){
@@ -44,9 +44,9 @@ firebase.auth().onAuthStateChanged(function(user){
          alert(error);});
       })
   });
-});
+//});
 
-firebase.auth().onAuthStateChanged(function(user){
+//firebase.auth().onAuthStateChanged(function(user){
   if(document.getElementById("llogin"))
   document.getElementById("llogin").addEventListener("click",function(){
     firebase.auth().signInWithEmailAndPassword($("#lcorreo").val(),$("#lpassword").val())
@@ -63,7 +63,7 @@ firebase.auth().onAuthStateChanged(function(user){
         alert(error);
     });
   });
-});
+//});
 
 firebase.auth().onAuthStateChanged(function(user){
   if(document.getElementById("logout"))
