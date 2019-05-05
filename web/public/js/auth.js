@@ -9,20 +9,19 @@
   };
   firebase.initializeApp(config);
   
-
 var current = firebase.auth().currentUser;
 
-console.log(current)
-if(!current){
-  document.getElementById("userstate").innerHTML= '<li><a href="login.html">Log in</a></li><li class="right"><a href="signin.html">Sing in</a></li>';
-}else{
-  document.getElementById("userstate").innerHTML='<li><a href="logout.html">Log out</a></li>';
-}
+firebase.auth().onAuthStateChanged(function(user){
+  if (user) {
+    document.getElementById("userstate").innerHTML='<li><a id="logout" href="logout.html">Log out</a></li>';
+  } else {
+    document.getElementById("userstate").innerHTML= '<li><a href="login.html">Log in</a></li><li class="right"><a href="signin.html">Sing in</a></li>';
+  }
+});
 
-
-if(document.getElementById("register"))
-document.getElementById("register").addEventListener("click",function(){
-    
+firebase.auth().onAuthStateChanged(function(user){
+  if(document.getElementById("register"))
+  document.getElementById("register").addEventListener("click",function(){
     var promesa = new Promise(function(resolve,reject){
       firebase.auth().createUserWithEmailAndPassword($("#scorreo").val(),$("#spassword").val())
       .then(function(){
@@ -33,7 +32,7 @@ document.getElementById("register").addEventListener("click",function(){
           current.updateProfile({
               displayName: username, 
             }).then(function() {
-               location.reload();
+               location.href="index.html";
             }).catch(function(error) {
               alert("Error al poner el nombre de usuario")
             });
@@ -44,11 +43,12 @@ document.getElementById("register").addEventListener("click",function(){
       .catch(function(error){
          alert(error);});
       })
-
+  });
 });
 
-if(document.getElementById("llogin"))
-document.getElementById("llogin").addEventListener("click",function(){
+firebase.auth().onAuthStateChanged(function(user){
+  if(document.getElementById("llogin"))
+  document.getElementById("llogin").addEventListener("click",function(){
     firebase.auth().signInWithEmailAndPassword($("#lcorreo").val(),$("#lpassword").val())
     .then(function(){
       var current = firebase.auth().currentUser;
@@ -62,4 +62,18 @@ document.getElementById("llogin").addEventListener("click",function(){
     .catch(function(error){
         alert(error);
     });
- });
+  });
+});
+
+firebase.auth().onAuthStateChanged(function(user){
+  if(document.getElementById("logout"))
+  document.getElementById("logout").addEventListener("click",function(){
+    firebase.auth().signOut().then(function() {
+      location.href="logout.html";
+      console.log(current);
+    }).catch(function(error) {
+      alert("cannot logout")
+    });
+  }); 
+});
+
