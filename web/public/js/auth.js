@@ -20,14 +20,37 @@ firebase.auth().onAuthStateChanged(function(user){
 });
 
 //firebase.auth().onAuthStateChanged(function(user){
-  if(document.getElementById("register"))
-  document.getElementById("register").addEventListener("click",function(){
-    var promesa = new Promise(function(resolve,reject){
+function validsign(){
+	
+	let emailregex=/^[-\w.%+]{1,64}@gmail.{1,125}[A-Z]{2,63}$/i;
+	let error=0;
+	let correo=document.getElementById("scorreo").value;
+	let pass1val=document.getElementById("spassword").value;
+	let pass2val=document.getElementById("srep-password").value;
+	document.getElementById("errores").innerHTML="";
+	
+	if(!emailregex.test(correo)){
+		document.getElementById("errores").innerHTML+="<p>Introduzca un correo electrónico gmail válido.</p>";
+		error=1;
+	}
+	if(pass1val.length===0){
+		document.getElementById("errores").innerHTML+="<p>Rellene el campo de la contraseña.</p>";
+		error=1;
+	}
+	if(pass1val.length<6){
+		document.getElementById("errores").innerHTML+="<p>La contraseña debe tener al menos 6 caracteres.</p>";
+		error=1;
+	}
+	if(pass1val!==pass2val){
+		document.getElementById("errores").innerHTML+="<p>La contraseña y repetir contraseña deben coincidir.</p>";
+		error=1;
+	}
+	if(error==0){
+	var promesa = new Promise(function(resolve,reject){
       firebase.auth().createUserWithEmailAndPassword($("#scorreo").val(),$("#spassword").val())
       .then(function(){
         current = firebase.auth().currentUser;
         if(current){
-          alert("Usuario registrado");
           var username = $("#susername").val();
           current.updateProfile({
               displayName: username, 
@@ -43,26 +66,52 @@ firebase.auth().onAuthStateChanged(function(user){
       .catch(function(error){
          alert(error);});
       })
-  });
+		setTimeout(function(){
+			vaciar();
+		},0);
+		document.getElementById("errores").innerHTML+="<p>Registrado correctamente.</p>";
+	}
+}
+
+if(document.getElementById("register"))
+ document.getElementById("register").addEventListener("click",validsign);
 //});
 
 //firebase.auth().onAuthStateChanged(function(user){
+function validlogin(){
+	
+	let emailregex=/^[-\w.%+]{1,64}@gmail.{1,125}[A-Z]{2,63}$/i;
+	let error=0;
+	let correo=document.getElementById("lcorreo").value;
+	let pass=document.getElementById("lpassword").value;
+	
+	if(!emailregex.test(correo)){
+		document.getElementById("errores").innerHTML+="<p>Introduzca un correo electrónico gmail válido.</p>";
+		error=1;
+	}
+	if(pass.length===0){
+		document.getElementById("errores").innerHTML+="<p>Rellene el campo de la contraseña.</p>";
+		error=1;
+	}
+	if(error==0){
+		firebase.auth().signInWithEmailAndPassword($("#lcorreo").val(),$("#lpassword").val())
+		.then(function(){
+		  var current = firebase.auth().currentUser;
+		  if(current){
+			location.href="index.html";
+		  }else{
+			alert("usuario no logueado")
+		  }
+		})
+		.catch(function(error){
+			alert(error);
+		});
+		document.getElementById("errores").innerHTML+="<p>Logueado correctamente.</p>";
+	}
+}
+
   if(document.getElementById("llogin"))
-  document.getElementById("llogin").addEventListener("click",function(){
-    firebase.auth().signInWithEmailAndPassword($("#lcorreo").val(),$("#lpassword").val())
-    .then(function(){
-      var current = firebase.auth().currentUser;
-      if(current){
-        alert("Usuario logeado");
-        location.href="index.html";
-      }else{
-        alert("usuario no logueado")
-      }
-    })
-    .catch(function(error){
-        alert(error);
-    });
-  });
+  document.getElementById("llogin").addEventListener("click",validlogin);
 //});
 
 firebase.auth().onAuthStateChanged(function(user){
@@ -77,3 +126,7 @@ firebase.auth().onAuthStateChanged(function(user){
   }); 
 });
 
+function vaciar(){
+	
+	document.getElementById("login").reset();
+}

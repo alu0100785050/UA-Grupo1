@@ -38,7 +38,7 @@ function validar(){
 			author: autor,
 			isbn: isbn
 		})
-		alert("Añadido correctamente.\n\nTítulo: "+title+"\nAutor: "+autor+"\nCategoría: "+category+"\nISBN: "+isbn+"\n");
+		document.getElementById("errores").innerHTML+="<p>Añadido correctamente.\n\nTítulo: "+title+"\nAutor: "+autor+"\nCategoría: "+category+"\nISBN: "+isbn+"\n</p>";
 		setTimeout(function(){
 			vaciar();
 		},0);
