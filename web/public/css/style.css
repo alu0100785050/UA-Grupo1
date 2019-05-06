@@ -27,6 +27,7 @@ form label{
   background-image: url(pictures/flecha.png);
   color: white;
   padding: 9px;
+  margin-top: 6px;
   width: 250px;
   border-radius:5px;
   border: none;
@@ -72,6 +73,36 @@ form label{
     background-color: #ffffff;
  }
 
+ #register{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #c4a381;
+    border-radius: 6px;
+    border: 2px solid #888888;
+  }
+#register:hover{
+    color: #888888;
+    background-color: #ffffff;
+ }
+ 
+ #llogin{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #c4a381;
+    border-radius: 6px;
+    border: 2px solid #888888;
+  }
+#llogin:hover{
+    color: #888888;
+    background-color: #ffffff;
+ }
+ 
  #login{
   /*margin-left: 200px;
   margin-right: 200px;
