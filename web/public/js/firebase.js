@@ -8,7 +8,13 @@ var config = {
 };
 firebase.initializeApp(config);
 
-
+firebase.auth().onAuthStateChanged(function(user){
+	if (user) {
+	  document.getElementById("userstate").innerHTML='<li><a id="logout" href="logout.html">Log out</a></li>';
+	} else {
+	  document.getElementById("userstate").innerHTML= '<li><a href="login.html">Log in</a></li><li class="right"><a href="signin.html">Sing in</a></li>';
+	}
+  });
 var book = firebase.database().ref("BOOKS");
 
 function validar(){

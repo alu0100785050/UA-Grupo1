@@ -1,124 +1,128 @@
 <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <title>Club de la Lectura</title>
+<html>
 
-        <link rel="stylesheet" href="css/estilo.css"> 
-      	<link rel="stylesheet" href="css/style.css">
-      	<meta name="description" content="Club de lectura para todas las edades.">
-        <link rel="icon" type="image/png" sizes="64x64" href="pictures/icon.png">
-        <meta name="keywords" content="club de lectura, lector, lectura, club lectura, club de libros, foro de lectura, foro lectura" />
-        <meta name="author" content="Diego, Miriam, Sonia y Oscar">
+<head>
+  <meta charset="utf-8">
+  <title>Club de la Lectura</title>
 
-        <!--IMPORTAR MATERIALIZE EN LA PÁGINA-->
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
-        <!--Let browser know website is optimized for mobile-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-      </head>
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Club de lectura para todas las edades.">
+  <link rel="icon" type="image/png" sizes="64x64" href="pictures/icon.png">
+  <meta name="keywords"
+    content="club de lectura, lector, lectura, club lectura, club de libros, foro de lectura, foro lectura" />
+  <meta name="author" content="Diego, Miriam, Sonia y Oscar">
 
-      <body class="orange lighten-4">
-        <header>
-          <div class="row header">
-            <div class="col m4"></div>
-            <div class="col m4">
-              <div class="orange lighten-3 hoverable">
-                <h1 class="center-align">Club de Lectura</h1>
-              </div>
-            </div>
-          </div>
-        </header>
+  <!--IMPORTAR MATERIALIZE EN LA PÁGINA-->
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+</head>
 
-
-        <nav>
-        <div class="nav-wrapper">
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-          <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="">Búsqueda</a></li>
-            <li><a href="">Categorías</a></li>
-            <li><a href="">Foro</a></li>
-            <li><a href="añadir.html">Añadir</a></li>
-          </ul>
-          <ul class="right">
-            <li><a href="">Log in</a></li>
-            <li class="right"><a href="">Sing in</a></li>
-          </ul>
-          <form class="right">
-              <div class="input-field">
-                <input class=""id="search" type="search" required>
-                <label class="label-icon " for="search"><i class="material-icons">search</i></label>
-                <i class="material-icons">close</i>
-              </div>
-            </form>   
+<body class="orange lighten-4">
+  <header>
+    <div class="row header">
+      <div class="col m4"></div>
+      <div class="col m4">
+        <div class="orange lighten-3 hoverable">
+          <h1 class="center-align">Club de Lectura</h1>
         </div>
-      </nav>
+      </div>
+    </div>
+  </header>
 
-      <ul class="sidenav" id="mobile-demo">
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="">Búsqueda</a></li>
         <li><a href="">Categorías</a></li>
         <li><a href="">Foro</a></li>
-        <li><a href="login.html">Log in</a></li>
-        <li><a href="signin.html">Sing in</a></li>
+        <li><a href="añadir.html">Añadir</a></li>
       </ul>
-
-	<div id="info"><p>* obligatorio</p></div>
-      <form id="formulario">
-	   <fieldset>
-	   <legend id="añadir"><p>Rellene los campos obligatorios para añadir un libro</p></legend>
-          <br/>
-        <div class="campos">
-          <div class="titulo">
-            <label for="title">Título *</label>
-            <input class="inp" type="text" id="title" placeholder="Introduzca titulo" required>
-          </div>
-      <br/>
-          <div class="autor">
-            <label for="author">Autor</label>
-            <input class="inp" type="text" id="author" placeholder="Introduzca autor">
-          </div>
-      <br/>
-          <div class="categoria">
-            <label for="category">Categoría</label>
-             <select id=category name="lol">
-				<option value="no especificado" selected>No especificado</option>
-				<option value="autoayuda">Autoayuda</option>
-				<option value="aventura">Aventura</option>
-				<option value="ciencia ficcion">Ciencia Ficción</option>
-				<option value="comedia">Comedia</option>
-				<option value="drama">Drama</option>
-				<option value="fantasia">Fantasía</option>
-				<option value="infantil">Infantil</option>
-				<option value="miedo">Miedo</option>
-				<option value="historica">Histórica</option>
-				<option value="romance">Romance</option>
-				<option value="suspense">Suspense</option>
-			 </select> 
-          </div>
-      <br/>
-          <div class="isbn">
-            <label for="isbn">ISBN *</label>
-            <input class="inp" id="isbn" type="number" placeholder="Introduzca ISBN" required>
-          </div>
-      <br/>
-		<span id="errores"></span>
-          <button id="btn" type="button">Añadir</button>
+      <ul class="right" id="userstate">
+            
+      </ul>
+      <form class="right">
+        <div class="input-field">
+          <input class="" id="search" type="search" required>
+          <label class="label-icon " for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
         </div>
-      <br/>
-      </fieldset>
       </form>
+    </div>
+  </nav>
 
-        <!--JAVASCRIPT PARA MATERIALIZE-->
-        <script type="text/javascript" src="js/materialize.js"></script>
-        
-        <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
-        <script type="text/javascript" src="js/firebase.js"></script>
-		<script type="text/javascript" src="js/auth.js"></script>
-		<script type="text/javascript" src="js/añadir.js"></script>
-      </body>
-    </html>
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="">Búsqueda</a></li>
+    <li><a href="">Categorías</a></li>
+    <li><a href="">Foro</a></li>
+    <li><a href="login.html">Log in</a></li>
+    <li><a href="signin.html">Sing in</a></li>
+  </ul>
+
+  <div id="info">
+    <p>* obligatorio</p>
+  </div>
+  <form id="formulario">
+    <fieldset>
+      <legend id="añadir">
+        <p>Rellene los campos obligatorios para añadir un libro</p>
+      </legend>
+      <br />
+      <div class="campos">
+        <div class="titulo">
+          <label for="title">Título *</label>
+          <input class="inp" type="text" id="title" placeholder="Introduzca titulo" required>
+        </div>
+        <br />
+        <div class="autor">
+          <label for="author">Autor</label>
+          <input class="inp" type="text" id="author" placeholder="Introduzca autor">
+        </div>
+        <br />
+        <div class="categoria">
+          <label for="category">Categoría</label>
+          <select id=category name="lol">
+            <option value="no especificado" selected>No especificado</option>
+            <option value="autoayuda">Autoayuda</option>
+            <option value="aventura">Aventura</option>
+            <option value="ciencia ficcion">Ciencia Ficción</option>
+            <option value="comedia">Comedia</option>
+            <option value="drama">Drama</option>
+            <option value="fantasia">Fantasía</option>
+            <option value="infantil">Infantil</option>
+            <option value="miedo">Miedo</option>
+            <option value="historica">Histórica</option>
+            <option value="romance">Romance</option>
+            <option value="suspense">Suspense</option>
+          </select>
+        </div>
+        <br />
+        <div class="isbn">
+          <label for="isbn">ISBN *</label>
+          <input class="inp" id="isbn" type="number" placeholder="Introduzca ISBN" required>
+        </div>
+        <br />
+        <span id="errores"></span>
+        <button id="btn" type="button">Añadir</button>
+      </div>
+      <br />
+    </fieldset>
+  </form>
+
+  <!--JAVASCRIPT PARA MATERIALIZE-->
+  <script type="text/javascript" src="js/materialize.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+  <script type="text/javascript" src="js/firebase.js"></script>
+  <script type="text/javascript" src="js/auth.js"></script>
+</body>
+</html>
