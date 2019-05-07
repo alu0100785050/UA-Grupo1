@@ -59,24 +59,18 @@ book.ref('BOOKS').once('value', function(snapshot){
           $(this).click();
         }
       });
-      // input[i].addEventListener('click',function(e){
-      //   $(this).parent().parent().parent().attr("aria-expanded",false)
-      //   console.log("no")
-      // })
+
     }
     input = document.getElementsByClassName("card");
     for (let i = 0; i < input.length; i++) {
       input[i].addEventListener('click', function (e) {
         var x=$(this).attr("aria-expanded")
-        console.log(x)
         if (x=="false"){
           x="true"
         }else{
           x="false";
         }
-        console.log(x);
         $(this).attr("aria-expanded",x)
-        console.log("done")
       });
     }
 });
