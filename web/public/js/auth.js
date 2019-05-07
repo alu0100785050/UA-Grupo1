@@ -84,6 +84,7 @@ function validlogin(){
 	let error=0;
 	let correo=document.getElementById("lcorreo").value;
 	let pass=document.getElementById("lpassword").value;
+	document.getElementById("errores").innerHTML="";
 	
 	if(!emailregex.test(correo)){
 		document.getElementById("errores").innerHTML+="<p>Introduzca un correo electrónico gmail válido.</p>";
@@ -106,7 +107,6 @@ function validlogin(){
 		.catch(function(error){
 			alert(error);
 		});
-		document.getElementById("errores").innerHTML+="<p>Logueado correctamente.</p>";
 	}
 }
 
