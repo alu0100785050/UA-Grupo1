@@ -23,13 +23,13 @@ book.ref('BOOKS').once('value', function(snapshot){
         
         $('#information').append(
           
-          `<div class="col m2"> 
-          <div class="card">
+          `<div class="col m2" > 
+          <div class="card"   >
             <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="pictures/`+b+`.jpg">
+              <img class="activator" src="pictures/`+b+`.jpg" tabindex=0>
             </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+            <div class="card-reveal"  >
+              <span class="card-title grey-text text-darken-4"><i class="material-icons right"  tabindex=0>close</i></span>
               <br><br>
               <p> <b>Título:</b><br/> `+ childData.title +` </p> `+`
               <p> <b>Categoría:</b><br/> `+ childData.category +` </p> `+`
@@ -37,10 +37,27 @@ book.ref('BOOKS').once('value', function(snapshot){
               <p> <b>ISBN:</b><br/> `+ childData.isbn +` </p> `+`
             </div>
           </div>
-        </div>` 
+        </div> 
+        ` 
 
         );
         b++;
     	});
+    }
+    var input = document.getElementsByClassName("activator");
+    for (let i = 0; i < input.length; i++) {
+      input[i].addEventListener('keypress', function (e) {
+        if (e.code == "Enter") {
+          $(this).click();
+        }
+      });
+    }
+    input = document.getElementsByClassName("material-icons");
+    for (let i = 0; i < input.length; i++) {
+      input[i].addEventListener('keypress', function (e) {
+        if (e.code == "Enter") {
+          $(this).click();
+        }
+      });
     }
 });
