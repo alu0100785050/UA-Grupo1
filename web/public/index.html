@@ -47,9 +47,9 @@
         <li><a href="">Foro</a></li>
         <li><a href="añadir.html">Añadir</a></li>
       </ul>
-      <form class="left">
-        <div class="input-field">
-          <input class="" id="search" type="search" role="search" required>
+      <form class="left" role="search">
+        <div class="input-field" >
+          <input class="" id="search" type="search"  required>
           <label class="label-icon " for="search"><i class="material-icons">search</i></label>
           <i class="material-icons">close</i>
         </div>
@@ -60,9 +60,9 @@
       </ul>
     </div>
   </nav>
-  <div class="row center-align">
-    <h2>Novedades</h2> <!-- añadir estado dinámico-->
-    <a id="information"></a>
+  <div class="row center-align" >
+    <h2 id="nov">Novedades</h2> <!-- añadir estado dinámico-->
+    <a id="information" role="grid" aria-labelledby="nov" ></a>
   </div>
 
   <!--JAVASCRIPT PARA MATERIALIZE-->

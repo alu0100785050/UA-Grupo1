@@ -24,9 +24,9 @@ book.ref('BOOKS').once('value', function(snapshot){
         $('#information').append(
           
           `<div class="col m2" > 
-          <div class="card"   >
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="pictures/`+b+`.jpg" tabindex=0>
+          <div class="card"   aria-expanded=false>
+            <div class="card-image waves-effect waves-block waves-light" >
+              <img class="activator" src="pictures/`+b+`.jpg" alt="`+childData.title+`" tabindex=0>
             </div>
             <div class="card-reveal"  >
               <span class="card-title grey-text text-darken-4"><i class="material-icons right"  tabindex=0>close</i></span>
@@ -58,6 +58,25 @@ book.ref('BOOKS').once('value', function(snapshot){
         if (e.code == "Enter") {
           $(this).click();
         }
+      });
+      // input[i].addEventListener('click',function(e){
+      //   $(this).parent().parent().parent().attr("aria-expanded",false)
+      //   console.log("no")
+      // })
+    }
+    input = document.getElementsByClassName("card");
+    for (let i = 0; i < input.length; i++) {
+      input[i].addEventListener('click', function (e) {
+        var x=$(this).attr("aria-expanded")
+        console.log(x)
+        if (x=="false"){
+          x="true"
+        }else{
+          x="false";
+        }
+        console.log(x);
+        $(this).attr("aria-expanded",x)
+        console.log("done")
       });
     }
 });
