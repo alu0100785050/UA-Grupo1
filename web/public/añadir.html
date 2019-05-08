@@ -71,15 +71,15 @@
       <div class="campos">
         <div class="titulo">
           <label for="title">Título *</label>
-          <input class="inp" type="text" id="title" placeholder="Introduzca titulo" required>
+          <input class="inp" type="text" aria-label="título" id="title" placeholder="Introduzca titulo" required>
         </div>
         <br />
         <div class="autor">
           <label for="author">Autor</label>
-          <input class="inp" type="text" id="author" placeholder="Introduzca autor">
+          <input class="inp" type="text" aria-label="autor" id="author" placeholder="Introduzca autor">
         </div>
         <br />
-        <div class="categoria">
+        <div aria-label="categoria" class="categoria">
           <label for="category">Categoría</label>
           <select id=category name="lol">
             <option value="no especificado" selected>No especificado</option>
@@ -99,11 +99,11 @@
         <br />
         <div class="isbn">
           <label for="isbn">ISBN *</label>
-          <input class="inp" id="isbn" type="number" placeholder="Introduzca ISBN" required>
+          <input class="inp" id="isbn" type="number" aria-label="isbn" placeholder="Introduzca ISBN" required>
         </div>
         <br />
-        <span id="errores"></span>
-        <button id="btn" type="button">Añadir</button>
+        <span id="errores" aria-live="polite"></span>
+        <button aria-label="añadir" id="btn" type="button">Añadir</button>
       </div>
       <br />
     </fieldset>
