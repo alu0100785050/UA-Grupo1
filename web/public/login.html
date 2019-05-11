@@ -47,28 +47,18 @@
             <li><a href="">Foro</a></li>
             <li><a href="añadir.html">Añadir</a></li>
           </ul>
-          <ul class="right" id="userstate">
             
-          </ul>
-          <form class="right">
+          <form class="left">
               <div class="input-field">
                 <input class=""id="search" type="search" required>
                 <label class="label-icon " for="search"><i class="material-icons">search</i></label>
                 <i class="material-icons">close</i>
               </div>
-            </form>   
+            </form>
+          <ul class="right" id="userstate"></ul>
         </div>
       </nav>
 
-      <ul class="sidenav" id="mobile-demo">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="">Búsqueda</a></li>
-        <li><a href="">Categorías</a></li>
-        <li><a href="">Foro</a></li>
-        <li><a href="">Log in</a></li>
-        <li><a href="">Sing in</a></li>
-      </ul>
-      
       <br/>
 
       <form id="login">
@@ -76,15 +66,16 @@
         <br/>
           <div class="registro">
             <div class="correo">
-              <label for="correo">Correo electrónico</label>
-              <input class="inp" type="text" id="lcorreo" placeholder="Introduzca correo" required>
+              <div for="correo">Correo electrónico</div>
+              <input class="inp" type="text" id="lcorreo" placeholder="Introduzca correo" aria-required="true" aria-labelledby="correo">
             </div>
         <br/>
             <div class="password">
-              <label for="password">Contraseña</label>
-              <input class="inp" type="password" id="lpassword" placeholder="Introduzca contraseña">
+              <div for="password">Contraseña</div>
+              <input class="inp" type="password" id="lpassword" placeholder="Introduzca contraseña"  aria-describedby="descripcionContra" aria-labelledby="password" aria-required="true">
             </div>
         <br/>
+ 	<p id="descripcionContra">La contraseña debe tener mínimo 6 caracteres</p>
           <span id="errores"></span>
             <button id="llogin" type="button">Login</button>
           </div>

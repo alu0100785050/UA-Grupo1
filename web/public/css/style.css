@@ -18,6 +18,12 @@ form label{
 	font-size: 140%;
 }
 
+.correo, .password {
+	cursor: pointer;
+	color: black;
+	font-size: 140%;
+}
+
 #category{
 	display: block;
 }
