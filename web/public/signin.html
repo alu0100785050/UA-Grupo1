@@ -46,29 +46,21 @@
             <li><a href="">Categorías</a></li>
             <li><a href="">Foro</a></li>
             <li><a href="añadir.html">Añadir</a></li>
-          </ul>
-          <ul class="right" id="userstate">
-            
-          </ul>
-          <form class="right">
+			<form class="left">
               <div class="input-field">
                 <input class=""id="search" type="search" required>
                 <label class="label-icon " for="search"><i class="material-icons">search</i></label>
                 <i class="material-icons">close</i>
               </div>
-            </form>   
+            </form>  
+          </ul>
+          <ul class="right" id="userstate">
+            
+          </ul>
+           
         </div>
       </nav>
-
-      <ul class="sidenav" id="mobile-demo">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="">Búsqueda</a></li>
-        <li><a href="">Categorías</a></li>
-        <li><a href="">Foro</a></li>
-        <li><a href="/login.html">Log in</a></li>
-        <li><a href="/sigin.html">Sing in</a></li>
-      </ul>
-      
+	  
       <br/>
 
       <form id="login">
@@ -77,21 +69,21 @@
           <div class="registro">
             <div class="correo">
               <label for="correo">Correo electrónico</label>
-              <input class="inp" type="text" id="scorreo" placeholder="Introduzca correo" required>
+              <input class="inp" type="text" id="scorreo" placeholder="Introduzca correo" aria-required="true" aria-labelledby="correo">
             </div>
         <br/>
             <div class="password">
               <label for="password">Contraseña</label>
-              <input class="inp" type="password" id="spassword" placeholder="Introduzca contraseña">
+              <input class="inp" type="password" id="spassword" placeholder="Introduzca contraseña" aria-required="true" aria-labelledby="password">
             </div>
         <br/>
             <div class="rep-password">
               <label for="rep-password">Repetir contraseña</label>
-              <input class="inp" id="srep-password" type="password" placeholder="Repita contraseña" required>
+              <input class="inp" id="srep-password" type="password" placeholder="Repita contraseña" aria-required="true" aria-labelledby="rep-password">
             </div>
         <br/>
           <span id="errores"></span>
-            <button id="register" type="button">Registrarse</button>
+            <button id="register" type="button" aria-label="registrarse">Registrarse</button>
           </div>
         <br/>
         </fieldset>
