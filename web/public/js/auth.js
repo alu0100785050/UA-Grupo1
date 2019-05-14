@@ -16,6 +16,11 @@ firebase.auth().onAuthStateChanged(function(user){
     document.getElementById("userstate").innerHTML='<li><a id="logout" href="logout.html">Log out</a></li>';
   } else {
     document.getElementById("userstate").innerHTML= '<li><a href="login.html">Log in</a></li><li class="right"><a href="signin.html">Sing in</a></li>';
+	}
+	if (user) {
+    document.getElementById("mobile-demo").insertAdjacentHTML('beforeend','<li><a id="logout" href="logout.html">Log out</a></li>');
+  } else {
+    document.getElementById("mobile-demo").insertAdjacentHTML('beforeend','<li><a href="login.html">Log in</a></li><li><a href="signin.html">Sing in</a></li>')
   }
 });
 
