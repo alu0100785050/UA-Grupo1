@@ -3731,6 +3731,7 @@ table span.badge {
     right: auto;
   }
   .row .col.m2 {
+    width: 16.6666666667%;
     height: 218px;
     margin-left: 12px;
     margin-right: 5px;
