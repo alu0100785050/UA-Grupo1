@@ -24,40 +24,14 @@
 </head>
 
 <body class="orange lighten-4">
-  <header>
-    <div class="row header">
-      <div class="col m4"></div>
-      <div class="col m4">
-        <div class="orange lighten-3 hoverable">
-          <h1 class="center-align">Club de Lectura</h1>
-        </div>
-      </div>
-    </div>
+  <header id="h">
+    <script src="jquery.js"></script> 
+    <script> 
+    $(function(){
+      $("#h").load("header.html"); 
+    });
+    </script> 
   </header>
-
-
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="">Búsqueda</a></li>
-        <li><a href="">Categorías</a></li>
-        <li><a href="">Foro</a></li>
-        <li><a href="añadir.html">Añadir</a></li>
-      </ul>
-      <form class="left">
-        <div class="input-field">
-          <input class="" id="search" type="search" required>
-          <label class="label-icon " for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
-        </div>
-      </form>
-      <ul class="right" id="userstate">
-            
-      </ul> 
-    </div>
-  </nav>
 
   <div id="info">
     <p>* obligatorio</p>
