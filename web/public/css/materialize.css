@@ -4753,7 +4753,7 @@ small {
 
 .card {
   position: relative;
-  margin: 0.5rem 0 1rem 0;
+  margin: 0.5rem 2rem 1rem 0;
   background-color: #fff;
   -webkit-transition: -webkit-box-shadow .25s;
   transition: -webkit-box-shadow .25s;
@@ -4871,12 +4871,13 @@ small {
 
 .card .card-image {
   position: relative;
-  height: 280px;
+  object-fit: cover;
 }
 
 .card .card-image img {
   display: block;
   border-radius: 2px 2px 0 0;
+  height: 250px;
   position: relative;
   left: 0;
   right: 0;

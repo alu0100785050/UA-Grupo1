@@ -1,11 +1,12 @@
 #formulario{
-	margin-left: 200px;
-	margin-right: 200px;
+  margin-top: 5%;
+	margin-left: 20%;
+	margin-right: 20%;
 	margin-bottom: 20px;
 }
 
 .campos{
-    width: 500px;
+    width: 70%;
 }
 	
 .inp::placeholder{ 
