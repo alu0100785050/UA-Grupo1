@@ -1,92 +1,67 @@
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <title>Club de la Lectura</title>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Club de la Lectura</title>
 
-        <link rel="stylesheet" href="css/estilo.css">
-        <link rel="stylesheet" href="css/style.css">
-      	<meta name="description" content="Club de lectura para todas las edades.">
-        <link rel="icon" type="image/png" sizes="64x64" href="pictures/icon.png">
-        <meta name="keywords" content="club de lectura, lector, lectura, club lectura, club de libros, foro de lectura, foro lectura" />
-        <meta name="author" content="Diego, Miriam, Sonia y Oscar">
-        
-
-
-        <!--IMPORTAR MATERIALIZE EN LA PÁGINA-->
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
-        <!--Let browser know website is optimized for mobile-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-        
-      </head>
-
-      <body class="orange lighten-4">
-        <header>
-          <div class="row header">
-            <div class="col m4"></div>
-            <div class="col m4">
-              <div class="orange lighten-3 hoverable">
-                <h1 class="center-align">Club de Lectura</h1>
-              </div>
-            </div>
-          </div>
-        </header>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/style.css">
+  	<meta name="description" content="Club de lectura para todas las edades.">
+    <link rel="icon" type="image/png" sizes="64x64" href="pictures/icon.png">
+    <meta name="keywords" content="club de lectura, lector, lectura, club lectura, club de libros, foro de lectura, foro lectura" />
+    <meta name="author" content="Diego, Miriam, Sonia y Oscar">
+    
 
 
-        <nav>
-        <div class="nav-wrapper">
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-          <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="">Búsqueda</a></li>
-            <li><a href="">Categorías</a></li>
-            <li><a href="">Foro</a></li>
-            <li><a href="añadir.html">Añadir</a></li>
-          </ul>
-            
-          <form class="left">
-              <div class="input-field">
-                <input class=""id="search" type="search" required>
-                <label class="label-icon " for="search"><i class="material-icons">search</i></label>
-                <i class="material-icons">close</i>
-              </div>
-            </form>
-          <ul class="right" id="userstate"></ul>
+    <!--IMPORTAR MATERIALIZE EN LA PÁGINA-->
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    
+  </head>
+
+  <body class="orange lighten-4">
+    <header id="h">
+    <script src="jquery.js"></script> 
+    <script> 
+    $(function(){
+      $("#h").load("header.html"); 
+    });
+    </script> 
+  </header>
+
+  <br/>
+
+  <form id="login">
+   <fieldset>
+    <br/>
+      <div class="registro">
+        <div class="correo">
+          <div for="correo">Correo electrónico</div>
+          <input class="inp" type="text" id="lcorreo" placeholder="Introduzca correo" aria-required="true" aria-labelledby="correo">
         </div>
-      </nav>
-
-      <br/>
-
-      <form id="login">
-       <fieldset>
-        <br/>
-          <div class="registro">
-            <div class="correo">
-              <div for="correo">Correo electrónico</div>
-              <input class="inp" type="text" id="lcorreo" placeholder="Introduzca correo" aria-required="true" aria-labelledby="correo">
-            </div>
-        <br/>
-            <div class="password">
-              <div for="password">Contraseña</div>
-              <input class="inp" type="password" id="lpassword" placeholder="Introduzca contraseña"  aria-describedby="descripcionContra" aria-labelledby="password" aria-required="true">
-            </div>
-        <br/>
- 	<p id="descripcionContra">La contraseña debe tener mínimo 6 caracteres</p>
-          <span id="errores"></span>
-            <button id="llogin" type="button">Login</button>
-          </div>
-        <br/>
-        </fieldset>
-      </form>
+    <br/>
+        <div class="password">
+          <div for="password">Contraseña</div>
+          <input class="inp" type="password" id="lpassword" placeholder="Introduzca contraseña"  aria-describedby="descripcionContra" aria-labelledby="password" aria-required="true">
+        </div>
+    <br/>
+<p id="descripcionContra">La contraseña debe tener mínimo 6 caracteres</p>
+      <span id="errores"></span>
+        <button id="llogin" type="button">Login</button>
       </div>
+    <br/>
+    </fieldset>
+  </form>
+  </div>
 
-        <!--JAVASCRIPT PARA MATERIALIZE-->
-        <script type="text/javascript" src="js/materialize.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
-        <script type="text/javascript" src="js/auth.js"></script>
-      </body>
-    </html>
+    <!--JAVASCRIPT PARA MATERIALIZE-->
+    <script type="text/javascript" src="js/materialize.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <script type="text/javascript" src="js/auth.js"></script>
+  </body>
+</html>
