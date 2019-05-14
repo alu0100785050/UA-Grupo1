@@ -4759,7 +4759,7 @@ small {
   transition: box-shadow .25s;
   transition: box-shadow .25s, -webkit-box-shadow .25s;
   border-radius: 2px;
-  height: 218;
+  
 }
 
 .card .card-title {
@@ -4882,7 +4882,7 @@ small {
   right: 0;
   top: 0;
   bottom: 0;
-  width: 160px;
+  width: 100%;
 }
 
 .card .card-image .card-title {
