@@ -35,13 +35,16 @@ gtag('config', 'UA-140614313-1', { 'optimize_id': 'GTM-5NWLCX9'});
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+  <script>
+    $(function(){
+      $("#h").load("header.html");
+      $("#f").load("footer.html"); 
+    })
+  </script>
 </head>
 
 <body class="orange lighten-4">
   <header id="h">
-    <script> 
-       $("#h").load("header.html"); 
-    </script> 
   </header>
 
   <div class="row center-align" >
@@ -50,17 +53,16 @@ gtag('config', 'UA-140614313-1', { 'optimize_id': 'GTM-5NWLCX9'});
   </div>
 
   <!--JAVASCRIPT PARA MATERIALIZE-->
-
-  <script type="text/javascript" src="js/materialize.js"></script>
-  <script type="text/javascript" src="js/auth.js"></script>
-  <script type="text/javascript" src="js/showupdate.js"></script>
+  <script type="text/javascript" src="js/showupdate.js" defer></script>
+  <script type="text/javascript" src="js/auth.js" defer></script>
+  <script type="text/javascript" src="js/materialize.js" defer></script>
+  
+  
 </body>
 
 
 <footer class="page-footer" id="f">
-    <script> 
-      $("#f").load("footer.html"); 
-    </script> 
+
 </footer>
 
 </html>
