@@ -11,7 +11,8 @@ firebase.initializeApp(config);
 
 var current = firebase.auth().currentUser;
  window.addEventListener('load', function() {
-    firebase.auth().onAuthStateChanged(function (user) {
+
+    setTimeout(firebase.auth().onAuthStateChanged(function (user) {
 
 		if (document.getElementById("userstate")) {
 			
@@ -29,7 +30,7 @@ var current = firebase.auth().currentUser;
 				document.getElementById("mobile-demo").insertAdjacentHTML('beforeend', '<li><a href="login.html">Log in</a></li><li><a href="signin.html">Sing in</a></li>')
 			}
 		}
-	});
+	}),2000)
   });
 
 
