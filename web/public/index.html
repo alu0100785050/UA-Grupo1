@@ -13,14 +13,15 @@
     content="club de lectura, lector, lectura, club lectura, club de libros, foro de lectura, foro lectura" />
   <meta name="author" content="Diego, Miriam, Sonia y Oscar">
 
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140614313-1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
 
-  gtag('config', 'UA-140614313-1');
+gtag('config', 'UA-140614313-1', { 'optimize_id': 'GTM-5NWLCX9'});
 </script>
 
 
@@ -38,12 +39,13 @@
 
 <body class="orange lighten-4">
   <header id="h">
+    <script src="jquery.js"></script> 
     <script> 
     $(function(){
       $("#h").load("header.html"); 
     });
-    </script>   
-   </header>
+    </script> 
+  </header>
 
   <div class="row center-align" >
     <h2 id="nov">Novedades</h2> <!-- añadir estado dinámico-->
@@ -59,6 +61,7 @@
 
 
 <footer class="page-footer" id="f">
+  <script src="jquery.js"></script> 
     <script> 
     $(function(){
       $("#f").load("footer.html"); 
