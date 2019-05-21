@@ -1,5 +1,5 @@
 /*AÑADIDO PARA HACER EL MENÚ RESPONSIVO Y DESPLEGABLE*/
- document.addEventListener('DOMContentLoaded', function() {
+ window.addEventListener('load', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems, {});
   });
