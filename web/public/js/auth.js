@@ -34,7 +34,6 @@ var current = firebase.auth().currentUser;
   });
 
 
-//firebase.auth().onAuthStateChanged(function(user){
 function validsign() {
 
 	let emailregex = /^[-\w.%+]{1,64}@gmail.{1,125}[A-Z]{2,63}$/i;
@@ -91,9 +90,7 @@ function validsign() {
 
 if (document.getElementById("register"))
 	document.getElementById("register").addEventListener("click", validsign);
-//});
 
-//firebase.auth().onAuthStateChanged(function(user){
 function validlogin() {
 
 	let emailregex = /^[-\w.%+]{1,64}@gmail.{1,125}[A-Z]{2,63}$/i;
@@ -128,7 +125,6 @@ function validlogin() {
 
 if (document.getElementById("llogin"))
 	document.getElementById("llogin").addEventListener("click", validlogin);
-//});
 
 firebase.auth().onAuthStateChanged(function (user) {
 	if (document.getElementById("logout"))
