@@ -11,11 +11,8 @@ firebase.initializeApp(config);
 
 var current = firebase.auth().currentUser;
  window.addEventListener('load', function() {
-
     setTimeout(firebase.auth().onAuthStateChanged(function (user) {
-
 		if (document.getElementById("userstate")) {
-			
 			if (user) {
 				document.getElementById("userstate").innerHTML = '<li><a id="logout" href="logout.html">Log out</a></li>';
 			} else {
@@ -23,7 +20,6 @@ var current = firebase.auth().currentUser;
 			}
 		}
 		if (document.getElementById("mobile-demo")) {
-			
 			if (user) {
 				document.getElementById("mobile-demo").insertAdjacentHTML('beforeend', '<li><a id="logout" href="logout.html">Log out</a></li>');
 			} else {
@@ -139,6 +135,5 @@ firebase.auth().onAuthStateChanged(function (user) {
 });
 
 function vaciar() {
-
 	document.getElementById("login").reset();
 }
