@@ -12,9 +12,7 @@ firebase.initializeApp(config);
 var current = firebase.auth().currentUser;
  
    firebase.auth().onAuthStateChanged(function (user) {
-	   console.log(document.getElementById("userstate"))
-	   console.log(document.getElementById("mobile-demo"))
-	   console.log('2?')
+	   console.log('auth')
 		if (document.getElementById("userstate")) {
 			if (user) {
 				document.getElementById("userstate").innerHTML = '<li><a id="logout" href="logout.html">Log out</a></li>';
