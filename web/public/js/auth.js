@@ -12,10 +12,9 @@ firebase.initializeApp(config);
 var current = firebase.auth().currentUser;
  window.addEventListener('load', function() {
     firebase.auth().onAuthStateChanged(function (user) {
-		console.log(document.getElementById("userstate"))
-		console.log(document.getElementById("mobile-demo"))
+
 		if (document.getElementById("userstate")) {
-			console.log('hola')
+			
 			if (user) {
 				document.getElementById("userstate").innerHTML = '<li><a id="logout" href="logout.html">Log out</a></li>';
 			} else {
@@ -23,7 +22,7 @@ var current = firebase.auth().currentUser;
 			}
 		}
 		if (document.getElementById("mobile-demo")) {
-			console.log('adios')
+			
 			if (user) {
 				document.getElementById("mobile-demo").insertAdjacentHTML('beforeend', '<li><a id="logout" href="logout.html">Log out</a></li>');
 			} else {
