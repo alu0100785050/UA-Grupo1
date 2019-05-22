@@ -5,6 +5,23 @@
 	margin-bottom: 5%;
 }
 
+.btnsearch{
+
+  position: absolute;
+  background: transparent;
+  border: none;
+  margin-inline: -300px;
+  color: white;
+
+}
+
+.iconox {
+
+  margin-left: 240px;
+  margin-block-start: -65px;
+  color: white;
+}
+
 .campos{
     width: 70%;
 }

@@ -1,26 +1,26 @@
-var hola = document.getElementById('search2');
-hola.addEventListener('keyup', function (event) {
-  //  if (document.getElementById('search').value.length > 0) {
-    if(event.keyCode === 13){
+
+if(document.getElementById("se") != null){
+ document.getElementById("se").addEventListener("keyup", function (event) {
+    if (document.getElementById('se').value.length > 0) {
+
     	event.preventDefault();
-    	document.getElementById("myBtn2").click();
+	    if(event.keyCode == 13){
+	    	
+	 		window.location.href='mislibros.html'
+
+	    }
+
     }
-
-    //}
-});
-
-var hola2 = document.getElementById('search2');
-
-hola2.addEventListener("click", function () {
-
-	window.location.href='mislibros.html'
-
-}); 
-
-/*function myFunction() {
+})};
 
 
-	window.location.href='mislibros.html'
+if(document.getElementById("myBtn2") != null){
+document.getElementById("myBtn2").addEventListener("click", function () {
+    if (document.getElementById("myBtn2").value.length > 0) {
 
-}
-*/
+		window.location.href='mislibros.html'
+	}
+
+})}; 
+
+
