@@ -7,7 +7,10 @@ var config = {
 	storageBucket: "club-de-lectura-cb6d5.appspot.com",
 	messagingSenderId: "175720945121"
 };
-firebase.initializeApp(config);
+if (!firebase.apps.length) {
+    firebase.initializeApp(config);
+}
+
 
 var current = firebase.auth().currentUser;
  
