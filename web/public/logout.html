@@ -26,9 +26,46 @@
 
   <body class="orange lighten-4">
     <header id="h">
-    <script> 
-      $("#h").load("header.html"); 
-    </script> 
+    <div class="row header">
+      <div class="col m4"></div>
+      <div class="col m4">
+        <h1 class="center-align">Club de Lectura</h1>
+      </div>
+
+    </div>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="">Búsqueda</a></li>
+          <li><a href="">Categorías</a></li>
+          <li><a href="mislibros.html">Mis libros</a></li>
+          <li><a href="añadir.html">Añadir</a></li>
+        </ul>
+        <ul class="right hide-on-med-and-down" id="userstate">
+          <!-- añadir estado dinámico -->
+
+        </ul>
+        <div class="right" role="search">
+          <div class="input-field">
+            <input type="text" id="se" required>
+            <button class="label-icon btnsearch" type="button" value="Ir a mis libros" id="myBtn2" for="search"><i
+                class="material-icons">search</i></button>
+            <i class="material-icons iconox">close</i>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <ul class="sidenav" id="mobile-demo">
+
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="">Búsqueda</a></li>
+      <li><a href="">Categorías</a></li>
+      <li><a href="mislibros.html">Mis libros</a></li>
+      <li><a href="añadir.html">Añadir</a></li>
+    </ul>
+    <div id="carga"></div>
   </header>
 
   <ul class="sidenav" id="mobile-demo">
@@ -54,8 +91,20 @@
   </body>
   <br>
   <footer class="page-footer" id="f">
-    <script> 
-      $("#f").load("footer.html"); 
-    </script> 
+    <div class="container">
+  <div class="row">
+    <div class="grey-text text-lighten-4">
+      <h5 class="white-text">Refencias de Trabajo</h5>
+      <br>
+        <p><i class="material-icons left">code</i><a class="grey-text text-lighten-3" target="_blank" href="https://github.com/alu0100785050/UA-Grupo1/tree/master/web">Github </a></p>
+        <p><i class="material-icons left">whatshot</i><a class="grey-text text-lighten-3" target="_blank" href="https://console.firebase.google.com/u/1/project/club-de-lectura-cb6d5/overview">Firebase </a></p>
+    </div>
+  </div>
+</div>
+  <div class="footer-copyright">
+    <div class="container center">
+    © 2019 Copyright UA - Grupo 1
+    </div>
+  </div>
 </footer>
 </html>
