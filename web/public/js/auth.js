@@ -14,7 +14,7 @@ if (!firebase.apps.length) {
 
 var current = firebase.auth().currentUser;
  
-   setTimeout(firebase.auth().onAuthStateChanged(function (user) {
+   window.addEventListener('load',function(){setTimeout(()=>(firebase.auth().onAuthStateChanged(function (user) {
 	   console.log('auth')
 		if (document.getElementById("userstate")) {
 			if (user) {
@@ -30,7 +30,7 @@ var current = firebase.auth().currentUser;
 				document.getElementById("mobile-demo").insertAdjacentHTML('beforeend', '<li><a href="login.html">Log in</a></li><li><a href="signin.html">Sing in</a></li>')
 			}
 		}
-	}),1000);
+	})),2000)});
   
 
 

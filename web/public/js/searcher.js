@@ -1,5 +1,6 @@
 
-if(document.getElementById("se") != null){
+
+	console.log('searcher1')
  document.getElementById("se").addEventListener("keyup", function (event) {
     if (document.getElementById('se').value.length > 0) {
 
@@ -11,10 +12,11 @@ if(document.getElementById("se") != null){
 	    }
 
     }
-})};
+});
 
 
 if(document.getElementById("myBtn2") != null){
+	console.log('searcher2')
 document.getElementById("myBtn2").addEventListener("click", function () {
     if (document.getElementById("myBtn2").value.length > 0) {
 
