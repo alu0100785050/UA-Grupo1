@@ -20,7 +20,8 @@ window.addEventListener('load', function () {
 		if (document.getElementById("userstate")) {
 			if (user) {
 				document.getElementById("userstate").innerHTML = '<li><a id="logout" href="logout.html">Log out</a></li>';
-			} else {
+				document.getElementById("mislibros").innerHTML = '<a href="mislibros.html">Mis libros</a>';
+			} else if(!user){
 				document.getElementById("userstate").innerHTML = '<li><a href="login.html">Log in</a></li><li class="right"><a href="signin.html">Sing in</a></li>';
 			}
 		}
@@ -127,17 +128,17 @@ window.addEventListener('load', function () {
 	if (document.getElementById("llogin"))
 		document.getElementById("llogin").addEventListener("click", validlogin);
 
+window.addEventListener('load', function () {
 	firebase.auth().onAuthStateChanged(function (user) {
 		if (document.getElementById("logout"))
 			document.getElementById("logout").addEventListener("click", function () {
 				firebase.auth().signOut().then(function () {
 					location.href = "logout.html";
-					console.log(current);
 				}).catch(function (error) {
 					alert("cannot logout")
 				});
 			});
-	});
+	})});
 
 	function vaciar() {
 		document.getElementById("login").reset();

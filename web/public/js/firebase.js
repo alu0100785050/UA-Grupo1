@@ -12,13 +12,13 @@ if (!firebase.apps.length) {
 }
 
 
-firebase.auth().onAuthStateChanged(function(user){
+/*firebase.auth().onAuthStateChanged(function(user){
 	if (user) {
 	  document.getElementById("userstate").innerHTML='<li><a id="logout" href="logout.html">Log out</a></li>';
 	} else {
 	  document.getElementById("userstate").innerHTML= '<li><a href="login.html">Log in</a></li><li class="right"><a href="signin.html">Sing in</a></li>';
 	}
-  });
+  });*/
 var book = firebase.database().ref("BOOKS");
 
 function validar(){
@@ -49,16 +49,8 @@ function validar(){
 			isbn: isbn
 		})
 		document.getElementById("errores").innerHTML+="<p>Añadido correctamente.\n\nTítulo: "+title+"\nAutor: "+autor+"\nCategoría: "+category+"\nISBN: "+isbn+"\n</p>";
-		setTimeout(function(){
-			vaciar();
-		},0);
-		
+		document.getElementById("formulario").reset();
 	}
-}
-
-function vaciar(){
-	
-	document.getElementById("formulario").reset();
 }
 
 document.getElementById("btn").addEventListener("click",validar);
