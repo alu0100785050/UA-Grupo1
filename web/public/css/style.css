@@ -12,6 +12,9 @@
   border: none;
   margin-inline: -300px;
   color: white;
+/* -webkit-margin-inline-start: -40px;
+  -webkit-margin-block-start: -65px;   para chrome*/ 
+
 
 }
 
