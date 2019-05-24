@@ -10,7 +10,8 @@
     <link rel="icon" type="image/png" sizes="64x64" href="pictures/icon.png">
     <meta name="keywords" content="club de lectura, lector, lectura, club lectura, club de libros, foro de lectura, foro lectura" />
     <meta name="author" content="Diego, Miriam, Sonia y Oscar">
-    
+    <!--redirecciona al index después de 2 segundos-->
+    <meta http-equiv="refresh" content="2;URL=index.html" >
 
 
     <!--IMPORTAR MATERIALIZE EN LA PÁGINA-->
@@ -59,11 +60,11 @@
     </nav>
     <ul class="sidenav" id="mobile-demo">
 
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="">Catálogo</a></li>
-      <li><a href="">Categorías</a></li>
-      <li id="mislibros"></li>
-      <li><a href="añadir.html">Añadir</a></li>
+      <li class="act"><a href="index.html">Inicio</a></li>
+      <li class="act"><a href="">Catálogo</a></li>
+      <li class="act"><a href="">Categorías</a></li>
+      <li class="act" id="mislibros"></li>
+      <li class="act"><a href="añadir.html">Añadir</a></li>
     </ul>
     <div id="carga"></div>
   </header>
@@ -82,6 +83,7 @@
   <div class="row center-align">
   <p>Ha cerrado sesión.</p>
   </br>
+  <p>Va a ser redireccionado en 2 segundos a la página principal...</p>
   </div>
 
     <!--JAVASCRIPT PARA MATERIALIZE-->

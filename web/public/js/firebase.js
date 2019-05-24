@@ -50,6 +50,7 @@ function validar(){
 		})
 		document.getElementById("errores").innerHTML+="<p>Añadido correctamente.\n\nTítulo: "+title+"\nAutor: "+autor+"\nCategoría: "+category+"\nISBN: "+isbn+"\n</p>";
 		document.getElementById("formulario").reset();
+		
 	}
 }
 

@@ -11,6 +11,18 @@ if (!firebase.apps.length) {
 	firebase.initializeApp(config);
 }
 
+//RESALTAR EN MENÚ LINK ACTIVO
+var contain = document.getElementById("nav-mobile");
+var btns = contain.getElementsByClassName("act");
+
+for (var i = 0; i < btns.length; i++) {
+	console.log("botones");
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
 
 var current = firebase.auth().currentUser;
 
@@ -19,10 +31,10 @@ window.addEventListener('load', function () {
 		console.log('auth')
 		if (document.getElementById("userstate")) {
 			if (user) {
-				document.getElementById("userstate").innerHTML = '<li><a id="logout" href="logout.html">Log out</a></li>';
+				document.getElementById("userstate").innerHTML = '<li class="act"><a id="logout" href="logout.html">Log out</a></li>';
 				document.getElementById("mislibros").innerHTML = '<a href="mislibros.html">Mis libros</a>';
 			} else if(!user){
-				document.getElementById("userstate").innerHTML = '<li><a href="login.html">Log in</a></li><li class="right"><a href="signin.html">Sing in</a></li>';
+				document.getElementById("userstate").innerHTML = '<li class="act"><a href="login.html">Log in</a></li><li class="right"><a href="signin.html">Sing in</a></li>';
 			}
 		}
 		if (document.getElementById("mobile-demo")) {
@@ -140,6 +152,7 @@ window.addEventListener('load', function () {
 			});
 	})});
 
-	function vaciar() {
-		document.getElementById("login").reset();
-	}
+function vaciar() {
+	document.getElementById("login").reset();
+}
+
