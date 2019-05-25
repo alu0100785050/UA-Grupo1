@@ -29,7 +29,7 @@ book.ref('BOOKS').once('value', function(snapshot){
               <img class="activator" src="pictures/`+b+`.jpg" alt="`+childData.title+`" tabindex=0>
             </div>
             <div class="card-reveal"  >
-              <span class="card-title grey-text text-darken-4"><i class="material-icons right"  tabindex=0>close</i></span>
+              <span class="card-title grey-text text-darken-4"><i class="material-icons right" tabindex=0>close</i></span>
               <br><br>
               <p> <b>Título:</b><br/> `+ childData.title +` </p> `+`
               <p> <b>Categoría:</b><br/> `+ childData.category +` </p> `+`
