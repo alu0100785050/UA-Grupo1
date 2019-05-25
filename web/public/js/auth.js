@@ -65,14 +65,11 @@ window.addEventListener('load', function () {
 			document.getElementById("errores").innerHTML += "<p>Rellene el campo de la contraseña.</p>";
 			error = 1;
 		}
-		if (pass1val.length < 6) {
-			document.getElementById("errores").innerHTML += "<p>La contraseña debe tener al menos 6 caracteres.</p>";
-			error = 1;
-		}
 		if (pass1val !== pass2val) {
 			document.getElementById("errores").innerHTML += "<p>La contraseña y repetir contraseña deben coincidir.</p>";
 			error = 1;
 		}
+		document.getElementById("errores").style.color = "red";
 		if (error == 0) {
 			var promesa = new Promise(function (resolve, reject) {
 				firebase.auth().createUserWithEmailAndPassword($("#scorreo").val(), $("#spassword").val())
@@ -121,6 +118,7 @@ window.addEventListener('load', function () {
 			document.getElementById("errores").innerHTML += "<p>Rellene el campo de la contraseña.</p>";
 			error = 1;
 		}
+		document.getElementById("errores").style.color = "red";
 		if (error == 0) {
 			firebase.auth().signInWithEmailAndPassword($("#lcorreo").val(), $("#lpassword").val())
 				.then(function () {

@@ -1,9 +1,10 @@
 #formulario{
-  margin-top: 5%;
+	margin-top: 5%;
 	margin-left: 20%;
 	margin-right: 20%;
 	margin-bottom: 5%;
 }
+
 
 .btnsearch{
 
@@ -29,6 +30,10 @@
     width: 70%;
 }
 	
+#info{
+	text-align: right;
+}	
+
 .inp::placeholder{ 
 	color: #666666; 
 }
@@ -51,11 +56,10 @@ form label{
 
 .categoria select{
   background-color: #c4a381;
-  background-image: url(pictures/flecha.png);
   color: white;
-  padding: 9px;
+  padding: 1%;
   margin-top: 6px;
-  width: 250px;
+  width: 40%;
   border-radius:5px;
   border: none;
   font-size: 20px;
@@ -77,12 +81,6 @@ form label{
 
 #añadir{
 	font-size: 140%;
-}
-
-#info{
-	float: right;
-	margin-right: 170px;
-	margin-top: 15px;
 }
 
 #btn{
@@ -131,11 +129,6 @@ form label{
     background-color: #ffffff;
  }
  
- #login{
-  /*margin-left: 200px;
-  margin-right: 200px;
-  margin-bottom: 20px;*/
-}
 
 #login fieldset{
   margin: auto;
