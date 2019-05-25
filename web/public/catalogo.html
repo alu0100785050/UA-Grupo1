@@ -37,7 +37,7 @@
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
           <li class="act"><a href="index.html">Inicio</a></li>
-          <li class="act"><a href="catalogo.html">Catálogo</a></li>
+          <li class="act"><a href="">Catálogo</a></li>
           <li class="act"><a href="">Categorías</a></li>
           <li class="act" id="mislibros"></li>
           <li class="act active"><a href="añadir.html">Añadir</a></li>
@@ -59,32 +59,18 @@
     <ul class="sidenav" id="mobile-demo">
 
       <li class="act"><a href="index.html">Inicio</a></li>
-      <li class="act"><a href="catalogo.html">Catálogo</a></li>
+      <li class="act"><a href="">Catálogo</a></li>
       <li class="act"><a href="">Categorías</a></li>
       <li class="act" id="mislibros"></li>
       <li class="act active"><a href="añadir.html">Añadir</a></li>
     </ul>
     <div id="carga"></div> 
   </header>
-
-  <form id="formulario">
-    <fieldset>
-      <br />
-      <div class="campos">
-        <div class="titulo">
-          <label for="title">Título *</label>
-          <input class="inp" type="text" aria-label="título" id="title" placeholder="Introduzca titulo" required>
-        </div>
-        <br />
-        <div class="autor">
-          <label for="author">Autor</label>
-          <input class="inp" type="text" aria-label="autor" id="author" placeholder="Introduzca autor">
-        </div>
-        <br />
-        <div aria-label="categoria" class="categoria">
+  
+  <div aria-label="categoria" id="tipos">
           <label for="category">Categoría</label>
           <select id=category name="lol">
-            <option value="no especificado" selected>No especificado</option>
+            <option value="Todos" selected>Todos</option>
             <option value="autoayuda">Autoayuda</option>
             <option value="aventura">Aventura</option>
             <option value="ciencia ficcion">Ciencia Ficción</option>
@@ -97,32 +83,22 @@
             <option value="romance">Romance</option>
             <option value="suspense">Suspense</option>
           </select>
-        </div>
-        <br />
-        <div class="isbn">
-          <label for="isbn">ISBN *</label>
-          <input class="inp" id="isbn" type="number" aria-label="isbn" placeholder="Introduzca ISBN" required>
-        </div>
-        <br />
-        <span id="errores" aria-live="polite"></span>
-        <button aria-label="añadir" id="btn" type="button">Añadir</button>
-		<div id="info">
-			<p>* obligatorio</p>
-		</div>
-      </div>
-      <br />
-    </fieldset>
-  </form>
-
-  <!--JAVASCRIPT PARA MATERIALIZE-->
-  <script type="text/javascript" src="js/materialize.js"></script>
-
-  <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
-  <script type="text/javascript" src="js/firebase.js"></script>
-  <script type="text/javascript" src="js/auth.js"></script>
-</body>
-
-<footer class="page-footer" id="f">
+    </div>
+	<div>
+		<table id="tabla">
+			<tr id="cabecera-cat">
+			  <th id="tit">Título</th>
+			  <th id="cat">Categoría</th>
+			  <th id="aut">Autor</th>
+			  <th id="isb">ISBN</th>
+			</tr>
+			<a id="libros"></a>
+		</table>
+	</div>
+	
+  
+  </body>
+  <footer class="page-footer" id="f">
     <div class="container">
   <div class="row">
     <div class="grey-text text-lighten-4">

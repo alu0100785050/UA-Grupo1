@@ -74,3 +74,22 @@ book.ref('BOOKS').once('value', function(snapshot){
       });
     }
 });
+
+
+book.ref('BOOKS').once('value', function(snapshot){
+	if(snapshot.exists()){
+      snapshot.forEach(function(data){
+	      var datos = data.val()
+			$('#libros').append(
+				`
+					<tr>
+					  <th id="tit">`+ datos.title +`</th>
+					  <th id="cat">`+ datos.category +`</th>
+					  <th id="aut">`+ datos.author +`</th>
+					  <th id="isb">`+ datos.isbn +`</th>
+					</tr>
+				`
+			);
+		)};
+	}
+});

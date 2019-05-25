@@ -161,3 +161,47 @@ header{
   color:black;
 
 }
+
+.categoria label{
+	cursor: pointer;
+	color: black;
+	font-size: 140%;
+}
+
+#tipos{
+	margin-top: 1%;
+	margin-left:4%;
+}
+
+#tipos label{
+	cursor: pointer;
+	color: black;
+	font-size: 140%;
+}
+
+#tipos select{
+  background-color: #c4a381;
+  color: white;
+  margin-top: 6px;
+  width: 20%;
+  border-radius:5px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+
+#tipos select:hover{
+	cursor: pointer; 
+}
+
+#tabla{
+	width: 110%;
+	color: black;
+	font-size: 140%;
+}
+#tabla tr th{
+	width: 20%;
+}
