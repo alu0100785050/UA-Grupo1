@@ -31,17 +31,17 @@ window.addEventListener('load', function () {
 		console.log('auth')
 		if (document.getElementById("userstate")) {
 			if (user) {
-				document.getElementById("userstate").innerHTML = '<li class="act"><a id="logout" href="logout.html">Log out</a></li>';
+				document.getElementById("userstate").innerHTML = '<li class="act"><a id="logout" href="logout.html">Cerrar sesión</a></li>';
 				document.getElementById("mislibros").innerHTML = '<a href="mislibros.html">Mis libros</a>';
 			} else if(!user){
-				document.getElementById("userstate").innerHTML = '<li class="act"><a href="login.html">Log in</a></li><li class="right"><a href="signin.html">Sing in</a></li>';
+				document.getElementById("userstate").innerHTML = '<li class="act"><a href="login.html">Iniciar sesión</a></li><li class="right"><a href="signin.html">Registrarse</a></li>';
 			}
 		}
 		if (document.getElementById("mobile-demo")) {
 			if (user) {
-				document.getElementById("mobile-demo").insertAdjacentHTML('beforeend', '<li><a id="logout" href="logout.html">Log out</a></li>');
+				document.getElementById("mobile-demo").insertAdjacentHTML('beforeend', '<li><a id="logout" href="logout.html">Cerrar sesión</a></li>');
 			} else {
-				document.getElementById("mobile-demo").insertAdjacentHTML('beforeend', '<li><a href="login.html">Log in</a></li><li><a href="signin.html">Sing in</a></li>')
+				document.getElementById("mobile-demo").insertAdjacentHTML('beforeend', '<li><a href="login.html">Iniciar sesión</a></li><li><a href="signin.html">Registrarse</a></li>')
 			}
 		}
 	})});
