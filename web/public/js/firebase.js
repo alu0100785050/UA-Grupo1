@@ -1,4 +1,6 @@
+//Este archivo define los procedimientos para añadir un libro a la base de datos
 
+//En el caso de que no esté cargada carga el firebase
 if (!firebase.apps.length) {
 	var config = {
 		apiKey: "AIzaSyBbG13io76qPTfHvZRn_Vw4BWjB8s4K2eI",
@@ -11,8 +13,9 @@ if (!firebase.apps.length) {
 	firebase.initializeApp(config);
 }
 
-
+//Accede a la base de datos de los libros
 var book = firebase.database().ref("BOOKS");
+
 
 function validar() {
 
@@ -46,5 +49,5 @@ function validar() {
 
 	}
 }
-
+//A la hora de introducir un libro comprueba que los datos sean correctos
 document.getElementById("btn").addEventListener("click", validar);
