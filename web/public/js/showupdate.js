@@ -16,7 +16,7 @@ var book = firebase.database();
 var links = firebase.storage().ref().child('pictures');
 var a = 1;
 
-function insertar (childData,enlace){
+function insertar(childData, enlace) {
   $('#information').append(
 
     `<div class="col m2" > 
@@ -37,62 +37,91 @@ function insertar (childData,enlace){
     `
   );
 }
-book.ref('BOOKS').once('value', function (snapshot) {
+book.ref('BOOKS').limitToFirst(10).once('value').then(function (snapshot) {
   if (snapshot.exists()) {
-    snapshot.forEach(function (data) {
-      var childData = data.val();
-      var urldl = '';
-      var peticion = links.child(`${childData.isbn}.jpg`).getDownloadURL()
-        .then(function (url) {
-          console.log('bien '+url)
-          urldl = url;
-          insertar(childData,urldl);
-        })
-        .catch(function (url) {
-          links.child(`0000000000000.jpg`).getDownloadURL().then(function (urll) {
-            console.log('regular'+url)
-            urldl = urll;
-            insertar(childData,urldl)
-          }).catch((err) => {
-            console.log(err);
+    var cargados = 0;
+    var cuenta=0; 
+    new Promise((resolve, reject) => {
+      snapshot.forEach(function (data) {
+        // cuenta=cuenta+1;
+        // if(cuenta==11){
+        //   return true;
+        // }
+        var childData = data.val();
+        var urldl = '';
+        var peticion = links.child(`${childData.isbn}.jpg`).getDownloadURL()
+          .then(function (url) {
+            urldl = url;
+            insertar(childData, urldl);
+            cargados = cargados + 1;
+            if (cargados >= 10) {
+              resolve();
+            }
           })
-        })
-    });
-  }
-
-  //Permite que se abra la tarjeta con un enter
-  var input = document.getElementsByClassName("activator");
-  for (let i = 0; i < input.length; i++) {
-    input[i].addEventListener('keypress', function (e) {
-      if (e.code == "Enter") {
-        $(this).click();
+          .catch(function (url) {
+            links.child(`0000000000000.jpg`).getDownloadURL().then(function (urll) {
+              urldl = urll;
+              insertar(childData, urldl)
+              cargados = cargados + 1;
+              if (cargados >= 10) {
+                resolve();
+              }
+            }).catch((err) => {
+              console.log(err);
+            })
+          })
+      });
+    }).then(() => {
+      //Permite que se abra la tarjeta con un enter
+      var input = document.getElementsByClassName("activator");
+      for (let i = 0; i < input.length; i++) {
+        input[i].addEventListener('keypress', function (e) {
+          if (e.code == "Enter") {
+            $(this).click();
+          }
+        });
       }
-    });
-  }
-  //permite que se cierre la tarjerta con un enter
-  input = document.getElementsByClassName("material-icons");
-  for (let i = 0; i < input.length; i++) {
-    input[i].addEventListener('keypress', function (e) {
-      if (e.code == "Enter") {
-        $(this).click();
-      }
-    });
+      //permite que se cierre la tarjerta con un enter
+      input = document.getElementsByClassName("material-icons");
+      for (let i = 0; i < input.length; i++) {
+        input[i].addEventListener('keypress', function (e) {
+          if (e.code == "Enter") {
+            $(this).click();
+          }
+        });
 
-  }
-  //Cambia el estado-aria de la tarjeta cada vez que se revela el contenido
-  input = document.getElementsByClassName("card");
-  for (let i = 0; i < input.length; i++) {
-    input[i].addEventListener('click', function (e) {
-      var x = $(this).attr("aria-expanded")
-      if (x == "false") {
-        x = "true"
+      }
+      //Cambia el estado-aria de la tarjeta cada vez que se revela el contenido
+      input = document.getElementsByClassName("card");
+      for (let i = 0; i < input.length; i++) {
+        input[i].addEventListener('click', function (e) {
+          var x = $(this).attr("aria-expanded")
+          if (x == "false") {
+            x = "true"
+          } else {
+            x = "false";
+          }
+          $(this).attr("aria-expanded", x)
+        });
+      }
+
+      var user = firebase.auth().currentUser
+      if (user) {
+        input = document.getElementsByClassName("card-reveal");
+        for (let i = 0; i < input.length; i++) {
+          input[i].insertAdjacentHTML('beforeend', '<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>')
+        }
       } else {
-        x = "false";
+        console.log('nop')
       }
-      $(this).attr("aria-expanded", x)
-    });
+    })
+
   }
+
+
+
 });
+
 
 //Ejecutar en fichero aparte
 book.ref('BOOKS').once('value', function (snapshot) {
