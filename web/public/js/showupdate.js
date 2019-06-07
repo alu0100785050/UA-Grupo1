@@ -1,4 +1,5 @@
 
+//En el caso de que no se haya cargado el firebase lo carga
 if (!firebase.apps.length) {
   var config = {
     apiKey: "AIzaSyBbG13io76qPTfHvZRn_Vw4BWjB8s4K2eI",
@@ -11,7 +12,7 @@ if (!firebase.apps.length) {
   firebase.initializeApp(config);
 }
 
-
+//Trae la base de datos
 var book = firebase.database();
 var a = 1;
 var b = 2;
@@ -39,11 +40,11 @@ book.ref('BOOKS').once('value', function (snapshot) {
           </div>
         </div> 
         `
-
       );
       b++;
     });
   }
+  //Permite que se abra la tarjeta con un enter
   var input = document.getElementsByClassName("activator");
   for (let i = 0; i < input.length; i++) {
     input[i].addEventListener('keypress', function (e) {
@@ -52,6 +53,7 @@ book.ref('BOOKS').once('value', function (snapshot) {
       }
     });
   }
+  //permite que se cierre la tarjerta con un enter
   input = document.getElementsByClassName("material-icons");
   for (let i = 0; i < input.length; i++) {
     input[i].addEventListener('keypress', function (e) {
@@ -61,6 +63,7 @@ book.ref('BOOKS').once('value', function (snapshot) {
     });
 
   }
+  //Cambia el estado-aria de la tarjeta cada vez que se revela el contenido
   input = document.getElementsByClassName("card");
   for (let i = 0; i < input.length; i++) {
     input[i].addEventListener('click', function (e) {
@@ -75,7 +78,7 @@ book.ref('BOOKS').once('value', function (snapshot) {
   }
 });
 
-
+//Ejecutar en fichero aparte
 book.ref('BOOKS').once('value', function (snapshot) {
   if (snapshot.exists()) {
     snapshot.forEach(function (data) {
