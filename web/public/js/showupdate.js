@@ -30,7 +30,7 @@ function insertar(childData, enlace) {
           <p> <b>Título:</b><br/> `+ childData.title + ` </p> ` + `
           <p> <b>Categoría:</b><br/> `+ childData.category + ` </p> ` + `
           <p> <b>Autor:</b><br/> `+ childData.author + ` </p> ` + `
-          <p> <b>ISBN:</b><br/> `+ childData.isbn + ` </p> ` + `
+          <p class="identifier"> <b>ISBN:</b><br/> `+ childData.isbn + ` </p> ` + `
         </div>
       </div>
     </div> 
@@ -40,7 +40,7 @@ function insertar(childData, enlace) {
 book.ref('BOOKS').limitToFirst(10).once('value').then(function (snapshot) {
   if (snapshot.exists()) {
     var cargados = 0;
-    var cuenta=0; 
+    var cuenta = 0;
     new Promise((resolve, reject) => {
       snapshot.forEach(function (data) {
         // cuenta=cuenta+1;
@@ -109,13 +109,27 @@ book.ref('BOOKS').limitToFirst(10).once('value').then(function (snapshot) {
       if (user) {
         input = document.getElementsByClassName("card-reveal");
         for (let i = 0; i < input.length; i++) {
-          input[i].insertAdjacentHTML('beforeend', '<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>')
+          input[i].insertAdjacentHTML('beforeend', '<a class="btn-floating btn-large waves-effect waves-light red add"><i class="material-icons">add</i></a>')
         }
       } else {
         console.log('nop')
       }
-    })
 
+      if (user) {
+        console.log('entra')
+        input = document.getElementsByClassName("add");
+        for (let i = 0; i < input.length; i++) {
+          input[i].addEventListener('click', function (event) {
+            console.log(user)
+            var isbn= $(event.currentTarget).parent().find(".identifier").text()
+            isbn = isbn.replace(/[^0-9]/g,"")
+            user.updateProfile(liked.push(isbn)).then(()=>{
+              console.log(user)
+            });
+          })
+        }
+      }
+    })
   }
 
 

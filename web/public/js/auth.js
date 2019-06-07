@@ -83,6 +83,7 @@ function validsign() {
 						var username = $("#susername").val();
 						current.updateProfile({
 							displayName: username,
+							liked:[],
 						}).then(function () {
 							location.href = "index.html";
 						}).catch(function (error) {
