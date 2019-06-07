@@ -11,39 +11,55 @@ if (!firebase.apps.length) {
   };
   firebase.initializeApp(config);
 }
-
 //Trae la base de datos
 var book = firebase.database();
+var links = firebase.storage().ref().child('pictures');
 var a = 1;
-var b = 2;
 
+function insertar (childData,enlace){
+  $('#information').append(
+
+    `<div class="col m2" > 
+      <div class="card"   aria-expanded=false>
+        <div class="card-image waves-effect waves-block waves-light" >
+          <img class="activator" src="`+ enlace + `" alt="` + childData.title + `" tabindex=0>
+        </div>
+        <div class="card-reveal"  >
+          <span class="card-title grey-text text-darken-4"><i class="material-icons right" tabindex=0>close</i></span>
+          <br><br>
+          <p> <b>Título:</b><br/> `+ childData.title + ` </p> ` + `
+          <p> <b>Categoría:</b><br/> `+ childData.category + ` </p> ` + `
+          <p> <b>Autor:</b><br/> `+ childData.author + ` </p> ` + `
+          <p> <b>ISBN:</b><br/> `+ childData.isbn + ` </p> ` + `
+        </div>
+      </div>
+    </div> 
+    `
+  );
+}
 book.ref('BOOKS').once('value', function (snapshot) {
   if (snapshot.exists()) {
     snapshot.forEach(function (data) {
       var childData = data.val();
-
-      $('#information').append(
-
-        `<div class="col m2" > 
-          <div class="card"   aria-expanded=false>
-            <div class="card-image waves-effect waves-block waves-light" >
-              <img class="activator" src="pictures/`+ b + `.jpg" alt="` + childData.title + `" tabindex=0>
-            </div>
-            <div class="card-reveal"  >
-              <span class="card-title grey-text text-darken-4"><i class="material-icons right" tabindex=0>close</i></span>
-              <br><br>
-              <p> <b>Título:</b><br/> `+ childData.title + ` </p> ` + `
-              <p> <b>Categoría:</b><br/> `+ childData.category + ` </p> ` + `
-              <p> <b>Autor:</b><br/> `+ childData.author + ` </p> ` + `
-              <p> <b>ISBN:</b><br/> `+ childData.isbn + ` </p> ` + `
-            </div>
-          </div>
-        </div> 
-        `
-      );
-      b++;
+      var urldl = '';
+      var peticion = links.child(`${childData.isbn}.jpg`).getDownloadURL()
+        .then(function (url) {
+          console.log('bien '+url)
+          urldl = url;
+          insertar(childData,urldl);
+        })
+        .catch(function (url) {
+          links.child(`0000000000000.jpg`).getDownloadURL().then(function (urll) {
+            console.log('regular'+url)
+            urldl = urll;
+            insertar(childData,urldl)
+          }).catch((err) => {
+            console.log(err);
+          })
+        })
     });
   }
+
   //Permite que se abra la tarjeta con un enter
   var input = document.getElementsByClassName("activator");
   for (let i = 0; i < input.length; i++) {
