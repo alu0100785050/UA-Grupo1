@@ -1,8 +1,8 @@
 /*AÑADIDO PARA HACER EL MENÚ RESPONSIVO Y DESPLEGABLE*/
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   console.log('materialize')
-var elems = document.querySelectorAll('.sidenav');
-var instances = M.Sidenav.init(elems, {});
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems, {});
 });
 
 /*!
