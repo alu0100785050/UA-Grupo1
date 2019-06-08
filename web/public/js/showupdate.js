@@ -106,8 +106,6 @@ book.ref('BOOKS').limitToFirst(10).once('value').then(function (snapshot) {
         for (let i = 0; i < input.length; i++) {
           input[i].insertAdjacentHTML('beforeend', '<a class="btn-floating btn-large waves-effect waves-light red add"><i class="material-icons">add</i></a>')
         }
-      } else {
-        console.log('nop')
       }
 
       if (user) {

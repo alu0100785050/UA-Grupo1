@@ -58,12 +58,12 @@
         </ul>
         <div id="carga"></div>
     </header>
-    
+
     <h2 class="center-align">Categorías</h2>
-    <div id="selector">
+    
         <div aria-label="categoria" id="tipos">
             <label for="category">Categoría</label>
-            <select id=category name="lol">
+            <select id="category">
                 <option value="Todos" selected>Todos</option>
                 <option value="autoayuda">Autoayuda</option>
                 <option value="aventura">Aventura</option>
@@ -76,20 +76,22 @@
                 <option value="historica">Histórica</option>
                 <option value="romance">Romance</option>
                 <option value="suspense">Suspense</option>
+                
             </select>
-            <a class="waves-effect waves-light btn-small"><i class="material-icons right">search</i>button</a>
+            <button class="btn brown lighten-2" id="submit">Buscar<i class="material-icons right">search</i></button>
+            
         </div>
-        <!-- Añanidr un boton -->
-        
-    </div>
+
+    
     <div class="row center-align">
         <h2 id="seleccionado"></h2> <!-- añadir estado dinámico-->
-        <a id="information" role="grid" aria-labelledby="seleccionado"></a>
+        <a id="resultados" role="grid" aria-labelledby="seleccionado"></a>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
     <script type="text/javascript" src="js/materialize.js"></script>
     <script type="text/javascript" src="js/auth.js"></script>
+    <script type="text/javascript" src="js/categorias.js"></script>
 
 </body>
 <footer class="page-footer" id="f">
