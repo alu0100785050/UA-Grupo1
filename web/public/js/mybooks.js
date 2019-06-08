@@ -11,7 +11,7 @@ if (!firebase.apps.length) {
     firebase.initializeApp(config);
 }
 
-window.addEventListener('load', function () {
+window.addEventListener('load', function() {
     console.log('mybooks')
     var book = firebase.database();
     var links = firebase.storage().ref().child('pictures');
@@ -122,10 +122,13 @@ window.addEventListener('load', function () {
                                 book.ref(`USERS/${user.uid}`).once('value').then(function (my) {
                                     if (my.exists()) {
                                         book.ref(`USERS/${user.uid}/liked/${isbn}`).remove()
+                                        $(event.currentTarget).parent().parent().parent()
+                                        console.log($(event.currentTarget))
                                     } else {
                                         console.log('algo ha fallado')
                                     }
                                 });
+                                $(event.currentTarget).parent().parent().parent().remove()
                             })
                         }
                     }
