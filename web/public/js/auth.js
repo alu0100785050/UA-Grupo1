@@ -32,18 +32,18 @@ window.addEventListener('load', function () {
 		console.log('auth')
 		if (document.getElementById("userstate")) {
 			if (user) {
-				document.getElementById("userstate").innerHTML = '<li class=""><a id="logout" href="logout.html">Cerrar sesión</a></li>';
-				document.getElementById("nav-mobile").insertAdjacentHTML('beforeend','<li class=""><a href="mislibros.html">Mis libros</a></li>');
+				document.getElementById("userstate").innerHTML = '<li class="act"><a id="logout" href="logout.html">Cerrar sesión</a></li>';
+				document.getElementById("nav-mobile").insertAdjacentHTML('beforeend','<li class="act"><a href="mislibros.html">Mis libros</a></li>');
 			} else if (!user) {
-				document.getElementById("userstate").innerHTML = '<li class=""><a href="login.html">Iniciar sesión</a></li><li class="  right"><a href="signin.html">Registrarse</a></li>';
+				document.getElementById("userstate").innerHTML = '<li class="act"><a href="login.html">Iniciar sesión</a></li><li class=" act right"><a href="signin.html">Registrarse</a></li>';
 			}
 		}
 		if (document.getElementById("mobile-demo")) {
 			if (user) {
 				//document.getElementById("mislibros").innerHTML = '<a href="mislibros.html">Mis libros</a>';
-				document.getElementById("mobile-demo").insertAdjacentHTML('beforeend', '<li class=""><a href="mislibros.html">Mis libros</a></li><li class=""><a id="logout" href="logout.html">Cerrar sesión</a></li>');
-			} else {		
-				document.getElementById("mobile-demo").insertAdjacentHTML('beforeend', '<li class=""><a href="login.html">Iniciar sesión</a></li><li class=""><a href="signin.html">Registrarse</a></li>')
+				document.getElementById("mobile-demo").insertAdjacentHTML('beforeend', '<li class="act"><a href="mislibros.html">Mis libros</a></li><li class="act"><a id="logout" href="logout.html">Cerrar sesión</a></li>');
+			} else {
+				document.getElementById("mobile-demo").insertAdjacentHTML('beforeend', '<li class="act"><a href="login.html">Iniciar sesión</a></li><li class="act"><a href="signin.html">Registrarse</a></li>')
 			}
 		}
 	})
