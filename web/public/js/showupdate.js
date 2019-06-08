@@ -120,18 +120,17 @@ book.ref('BOOKS').limitToFirst(10).once('value').then(function (snapshot) {
             var none = book.ref(`USERS/${user.uid}`).once('value').then(function (my) {
               if (my.exists()) {
                 book.ref(`USERS/${user.uid}/liked`).child(isbn).set({
-                  value: true,
+                  isbn:isbn
                 })
               } else {
                 book.ref(`USERS`).child(user.uid).set({
                   liked: null,
-                  username: user.username||"anonymus",
+                  username: user.username || "anonymus",
                 }).then(() => {
                   book.ref(`USERS/${user.uid}/liked`).child(isbn).set({
-                    value: true,
+                    isbn:isbn,
                   })
                 })
-
               }
             });
           })
@@ -139,27 +138,5 @@ book.ref('BOOKS').limitToFirst(10).once('value').then(function (snapshot) {
       }
     })
   }
-
-
-
 });
 
-
-//Ejecutar en fichero aparte
-book.ref('BOOKS').once('value', function (snapshot) {
-  if (snapshot.exists()) {
-    snapshot.forEach(function (data) {
-      var datos = data.val();
-      $('#libros').append(
-        `
-					<tr>
-					  <th id="tit">`+ datos.title + `</th>
-					  <th id="cat">`+ datos.category + `</th>
-					  <th id="aut">`+ datos.author + `</th>
-					  <th id="isb">`+ datos.isbn + `</th>
-					</tr>
-				`
-      );
-    })
-  };
-});
