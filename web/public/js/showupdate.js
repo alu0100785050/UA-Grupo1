@@ -40,13 +40,8 @@ function insertar(childData, enlace) {
 book.ref('BOOKS').limitToFirst(10).once('value').then(function (snapshot) {
   if (snapshot.exists()) {
     var cargados = 0;
-    var cuenta = 0;
     new Promise((resolve, reject) => {
       snapshot.forEach(function (data) {
-        // cuenta=cuenta+1;
-        // if(cuenta==11){
-        //   return true;
-        // }
         var childData = data.val();
         var urldl = '';
         var peticion = links.child(`${childData.isbn}.jpg`).getDownloadURL()
@@ -116,15 +111,28 @@ book.ref('BOOKS').limitToFirst(10).once('value').then(function (snapshot) {
       }
 
       if (user) {
-        console.log('entra')
         input = document.getElementsByClassName("add");
         for (let i = 0; i < input.length; i++) {
           input[i].addEventListener('click', function (event) {
-            console.log(user)
-            var isbn= $(event.currentTarget).parent().find(".identifier").text()
-            isbn = isbn.replace(/[^0-9]/g,"")
-            user.updateProfile(liked.push(isbn)).then(()=>{
-              console.log(user)
+            var isbn = $(event.currentTarget).parent().find(".identifier").text()
+            isbn = isbn.replace(/[^0-9]/g, "")
+            //Insertar en la nueva base de datos
+            var none = book.ref(`USERS/${user.uid}`).once('value').then(function (my) {
+              if (my.exists()) {
+                book.ref(`USERS/${user.uid}/liked`).child(isbn).set({
+                  value: true,
+                })
+              } else {
+                book.ref(`USERS`).child(user.uid).set({
+                  liked: null,
+                  username: user.username||"anonymus",
+                }).then(() => {
+                  book.ref(`USERS/${user.uid}/liked`).child(isbn).set({
+                    value: true,
+                  })
+                })
+
+              }
             });
           })
         }
