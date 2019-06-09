@@ -99,6 +99,7 @@ function validsign() {
 		setTimeout(function () {
 			vaciar();
 		}, 0);
+		document.getElementById("errores").style.color = "green";
 		document.getElementById("errores").innerHTML += "<p>Registrado correctamente.</p>";
 	}
 }
