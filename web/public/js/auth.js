@@ -99,8 +99,8 @@ function validsign() {
 		setTimeout(function () {
 			vaciar();
 		}, 0);
-		document.getElementById("errores").style.color = "green";
-		document.getElementById("errores").innerHTML += "<p>Registrado correctamente.</p>";
+		
+		document.getElementById("errores").innerHTML += '<p class="green">Registrado correctamente.</p>';
 	}
 }
 //Si se encuentra en la pagina de registro y se pulsa para registrar se valida la información insertada
