@@ -95,10 +95,7 @@ function busqueda() {
                         for (let i = 0; i < input.length; i++) {
                             input[i].insertAdjacentHTML('beforeend', '<a class="btn-floating btn-large waves-effect waves-light red add"><i class="material-icons">add</i></a>')
                         }
-                    } else {
-                        console.log('nop')
-                    }
-
+                    } 
                     if (user) {
                         input = document.getElementsByClassName("add");
                         for (let i = 0; i < input.length; i++) {
@@ -192,12 +189,13 @@ function busqueda() {
                         });
                     }
 
-
-                    input = document.getElementsByClassName("card-reveal");
-                    for (let i = 0; i < input.length; i++) {
-                        input[i].insertAdjacentHTML('beforeend', '<a class="btn-floating btn-large waves-effect waves-light red add"><i class="material-icons">add</i></a>')
-                    }
-
+                    var user = firebase.auth().currentUser
+                    if (user) {
+                        input = document.getElementsByClassName("card-reveal");
+                        for (let i = 0; i < input.length; i++) {
+                            input[i].insertAdjacentHTML('beforeend', '<a class="btn-floating btn-large waves-effect waves-light red add"><i class="material-icons">add</i></a>')
+                        }
+                    } 
 
                     if (user) {
                         input = document.getElementsByClassName("add");
