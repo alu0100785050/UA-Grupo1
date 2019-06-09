@@ -38,7 +38,7 @@ function busqueda() {
                                 urldl = url;
                                 insertar(childData, urldl);
                                 cargados = cargados + 1;
-                                if (cargados >= 10) {
+                                if (cargados >= snapshot.numChildren()) {
                                     resolve();
                                 }
                             })
@@ -47,7 +47,7 @@ function busqueda() {
                                     urldl = urll;
                                     insertar(childData, urldl)
                                     cargados = cargados + 1;
-                                    if (cargados >= 10) {
+                                    if (cargados >= snapshot.numChildren()) {
                                         resolve();
                                     }
                                 }).catch((err) => {
@@ -141,7 +141,7 @@ function busqueda() {
                                 urldl = url;
                                 insertar(childData, urldl);
                                 cargados = cargados + 1;
-                                if (cargados >= 10) {
+                                if (cargados >= snapshot.numChildren()) {
                                     resolve();
                                 }
                             })
@@ -150,7 +150,7 @@ function busqueda() {
                                     urldl = urll;
                                     insertar(childData, urldl)
                                     cargados = cargados + 1;
-                                    if (cargados >= 10) {
+                                    if (cargados >= snapshot.numChildren()) {
                                         resolve();
                                     }
                                 }).catch((err) => {
@@ -192,15 +192,12 @@ function busqueda() {
                         });
                     }
 
-                    var user = firebase.auth().currentUser
-                    if (user) {
-                        input = document.getElementsByClassName("card-reveal");
-                        for (let i = 0; i < input.length; i++) {
-                            input[i].insertAdjacentHTML('beforeend', '<a class="btn-floating btn-large waves-effect waves-light red add"><i class="material-icons">add</i></a>')
-                        }
-                    } else {
-                        console.log('nop')
+
+                    input = document.getElementsByClassName("card-reveal");
+                    for (let i = 0; i < input.length; i++) {
+                        input[i].insertAdjacentHTML('beforeend', '<a class="btn-floating btn-large waves-effect waves-light red add"><i class="material-icons">add</i></a>')
                     }
+
 
                     if (user) {
                         input = document.getElementsByClassName("add");
@@ -229,6 +226,8 @@ function busqueda() {
                         }
                     }
                 })
+            } else {
+                $("#resultados").append(`No hay libros de esta categoría todavía`)
             }
         });
     }
